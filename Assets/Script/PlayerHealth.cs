@@ -49,6 +49,18 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(damagePerHit);
             invincibleTimer = invincibilityTime;
         }
+        if (collision.gameObject.CompareTag("Enemy_pistolBullet"))
+        {
+            TakeDamage(2f);
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.gameObject.CompareTag("Enemy_SGBullet"))
+        {
+            TakeDamage(5f);
+            Destroy(collision.gameObject);
+            
+        }
     }
 
     private void TakeDamage(float amount)
@@ -79,7 +91,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.text = _currentHealth.ToString();
     }
 
-    public void Regenerate()
+    private void Regenerate()
     {
 
         if (_currentHealth == _maxHealth || isRegenerating)

@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public static Action<Transform> OnEnemyDead; //declaring the event
 
-    private float _enemyHealth = 5f;
+    [SerializeField] float _enemyHealth = 5f;
     private float _enemyCurrentHealth;
 
     
@@ -20,12 +20,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet")) //for pistol bullets
         {
-            _enemyCurrentHealth -= 1f;
+            _enemyCurrentHealth -= 2f;
             Debug.Log("shot!!");
         }
         if (collision.gameObject.CompareTag("SGBullet")) //for shotgun bullets
         {
-            _enemyCurrentHealth -= 3f;
+            _enemyCurrentHealth -= 5f;
             Debug.Log("SG shot!!");
         }
 

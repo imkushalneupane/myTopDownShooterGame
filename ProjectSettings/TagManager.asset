@@ -10,6 +10,8 @@ TagManager:
   - PistolDrop
   - ShotgunDrop
   - HealthPotion
+  - Enemy_pistolBullet
+  - Enemy_SGBullet
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - obstacle
   - 
   - 
   - 
