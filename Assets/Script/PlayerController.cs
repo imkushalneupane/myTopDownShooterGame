@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && canBoost)
         {
+        
 
             StartCoroutine(Boost());
             Debug.Log("Boost! Pressed!");
