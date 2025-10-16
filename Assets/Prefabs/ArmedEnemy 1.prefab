@@ -60,6 +60,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -81,10 +83,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1843259011180810679, guid: 874206fde8a6dc94088cf3b18ce298e9, type: 3}
+  m_Sprite: {fileID: 4801227835787818748, guid: 7e57728bab2cad6449a8012580f64124, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,7 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5026874554777718104, guid: 99f6d9d47c897724b927f8a277718d22, type: 3}
+  shotgunbulletPrefab: {fileID: 0}
   firing_position: {fileID: 6678982856681971132}
+  secondary_firing_position: {fileID: 0}
   bulletSpeed: 30
   fireRate: 2
   bulletLifeTime: 5
@@ -237,7 +242,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.97, y: 1.5}
+    oldSize: {x: 2.09, y: 1.25}
     newSize: {x: 0.41, y: 0.5502973}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
