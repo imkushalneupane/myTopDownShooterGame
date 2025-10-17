@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]PlayerHealth _player;  //refrence to PlayerHealth script
     Renderer _renderer; //refrence to renderer
 
-    public ParticleSystem boost;
+    public ParticleSystem boost;    
 
     private bool canBoost = true;
 
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
             StartCoroutine(Boost());
             Debug.Log("Boost! Pressed!");
+            boost.Play();  //playing the particle effect
         }
         
 
@@ -74,10 +75,11 @@ public class PlayerController : MonoBehaviour
         canBoost = false;
         moveSpeed = 40f;
         Debug.Log("Boost");
-        //boost.Play();
 
         yield return new WaitForSeconds(.125f);
         moveSpeed = 5f;
+        yield return new WaitForSeconds(.125f);
+        boost.Stop();  //ending the particle effect
 
         yield return new WaitForSeconds(2.5f);
         canBoost = true;
