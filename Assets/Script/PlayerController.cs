@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]PlayerHealth _player;  //refrence to PlayerHealth script
     Renderer _renderer; //refrence to renderer
 
+    public ParticleSystem boost;
+
     private bool canBoost = true;
 
 
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         canBoost = false;
         moveSpeed = 40f;
         Debug.Log("Boost");
+        //boost.Play();
 
         yield return new WaitForSeconds(.125f);
         moveSpeed = 5f;
