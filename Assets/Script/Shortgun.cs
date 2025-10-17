@@ -11,6 +11,7 @@ public class Shortgun: Weapon
     public TextMeshProUGUI shotgunReloadStatus;
 
     public ParticleSystem muzzleFlash;
+    public AudioSource fireSound;
 
 
     private void Start()
@@ -52,6 +53,8 @@ public class Shortgun: Weapon
 
         //muzzle flash
         muzzleFlash.Play();
+        //fire sound
+        fireSound.Play();
 
 
         //autoreload when magazing is empty
