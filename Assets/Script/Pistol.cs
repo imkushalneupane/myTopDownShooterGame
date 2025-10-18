@@ -7,6 +7,9 @@ public class Pistol : Weapon
     public TextMeshProUGUI pistolText;
     public TextMeshProUGUI pistolReloadStatus;
 
+    public ParticleSystem muzzleFlash; 
+    public AudioSource fireAudio;
+
 
 
     private void Start()
@@ -41,6 +44,12 @@ public class Pistol : Weapon
 
         //reducing the bullets
         _bulletOnMag --;
+
+        //MuzzleFlash
+        muzzleFlash.Play();
+        //fire sound
+        fireAudio.Play();
+
 
         //autoreload when magazing is empty
         if (_bulletOnMag <= 0 && _totalBullet > 0)

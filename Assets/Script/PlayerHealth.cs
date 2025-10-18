@@ -14,7 +14,10 @@ public class PlayerHealth : MonoBehaviour
     private float invincibilityTime = 1f;
 
     public TextMeshProUGUI healthBar;
-    public Renderer _renderer;
+    public AudioSource bgMusic;
+    public AudioSource deathAudio;
+    public ParticleSystem healParticle;
+
 
     private float invincibleTimer;
 
@@ -24,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _renderer = GetComponent<Renderer>();
+        
         _currentHealth = _maxHealth;
         UpdateHealthUI();
     }
@@ -84,6 +87,10 @@ public class PlayerHealth : MonoBehaviour
     private void PlayerDie()
     {
         OnPlayerDead?.Invoke(); //publishing that player died
+        bgMusic.Stop();
+        deathAudio.Play();
+        
+
     }
 
     private void UpdateHealthUI()
@@ -100,7 +107,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         StartCoroutine(RegenCoroutine());
-
+        healParticle.Play();
     }
 
     private IEnumerator RegenCoroutine()
@@ -111,12 +118,12 @@ public class PlayerHealth : MonoBehaviour
         while (RegenPoints >= 0)
         {
 
-            _renderer.material.color = Color.green;
+            
             _currentHealth++;
             RegenPoints --;
             UpdateHealthUI();
             yield return new WaitForSeconds(.25f);
-            _renderer.material.color = Color.white;
+            
 
             if (_currentHealth >= 10f)  //if health is full , then break outta loop
                 break;

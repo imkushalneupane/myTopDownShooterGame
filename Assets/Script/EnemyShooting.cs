@@ -8,10 +8,13 @@ public class EnemyShooting : MonoBehaviour
     public GameObject shotgunbulletPrefab;
     public Transform firing_position;
     public Transform secondary_firing_position;
-    public float bulletSpeed = 30f;
+    public float bulletSpeed = 50f;
     public float fireRate = 2f;
     public float bulletLifeTime = 5f;
     public bool canFire = true;
+
+    public AudioSource bulletSound;
+    public ParticleSystem muzzleFlash;
 
     public void Shoot(Transform target)
     {
@@ -24,6 +27,8 @@ public class EnemyShooting : MonoBehaviour
         if (bulletPrefab == null || firing_position == null || target == null) return;
         GameObject bullet = Instantiate(bulletPrefab, firing_position.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        bulletSound.Play();
+        muzzleFlash.Play();
 
         if (rb != null)
         {
@@ -52,6 +57,8 @@ public class EnemyShooting : MonoBehaviour
         if (shotgunbulletPrefab == null || secondary_firing_position == null || target == null) return;
         GameObject bullet2 = Instantiate(shotgunbulletPrefab, secondary_firing_position.position, Quaternion.identity);
         Rigidbody2D rb = bullet2.GetComponent<Rigidbody2D>();
+        bulletSound.Play();
+        muzzleFlash.Play();
 
         if (rb != null)
         {
