@@ -800,6 +800,7 @@ MonoBehaviour:
   doorPrefab: {fileID: 8457263253094350763, guid: f3b36481e828b274db354871c31a5e1c, type: 3}
   spawnPoints:
   - {fileID: 816230625}
+  enemySpawner: {fileID: 530704008}
 --- !u!212 &211444423
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3316,6 +3317,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &530704008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
+  m_PrefabInstance: {fileID: 191659479180964163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94688478790f9a64ab7ec9ffa8b0c27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &537284548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5643,6 +5655,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &893541018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 893541019}
+  m_Layer: 0
+  m_Name: AkSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &893541019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893541018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &896792520 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1827114532354010393, guid: c517d56c88b06b449a83dfe841c5a0ef, type: 3}
@@ -14660,6 +14703,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpwanner
       objectReference: {fileID: 0}
+    - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
+      propertyPath: _ak47
+      value: 
+      objectReference: {fileID: 3815574916420207806, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+    - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
+      propertyPath: gunSpawnPoint
+      value: 
+      objectReference: {fileID: 893541019}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14947,11 +14998,11 @@ PrefabInstance:
       objectReference: {fileID: 1076863359}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -71.77
+      value: 0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.6
+      value: 12.7
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15353,3 +15404,4 @@ SceneRoots:
   - {fileID: 7094854727563137910}
   - {fileID: 2715856766353655409}
   - {fileID: 211444425}
+  - {fileID: 893541019}
