@@ -12,6 +12,8 @@ TagManager:
   - HealthPotion
   - Enemy_pistolBullet
   - Enemy_SGBullet
+  - AK47Drop
+  - AK47
   layers:
   - Default
   - TransparentFX

@@ -60,10 +60,9 @@ public class AK47 : Weapon
         }
     }
 
-    public void GetPistolDrop()
+    public void GetAK47Drop()
     {
-        _totalBullet += 10f;
+        _totalBullet += 30f;
     }
-
 
 }

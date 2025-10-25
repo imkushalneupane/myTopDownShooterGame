@@ -10,7 +10,7 @@ public class EnemyDrop : MonoBehaviour
     private GameObject pistolBullet;
     [SerializeField]
     private GameObject shotgunBullet;
-
+    
    
 
 

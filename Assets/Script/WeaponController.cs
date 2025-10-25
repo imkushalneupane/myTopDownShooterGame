@@ -22,6 +22,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] GameObject longgunPlayer;
 
     private bool IsAutomatic = false;
+    public static bool HasAK47 = false;
 
 
     private void Start()
@@ -52,7 +53,7 @@ public class WeaponController : MonoBehaviour
             SwitchWeapon(1); //shortgun
             IsAutomatic= false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && HasAK47)
         {
             SwitchWeapon(2); //AK47
             IsAutomatic = true;
@@ -144,4 +145,10 @@ public class WeaponController : MonoBehaviour
         longgunPlayer.SetActive(false);
 
     }
+
+    public static void GetAK47()
+    {
+        HasAK47 = true;
+    }
+
 }
