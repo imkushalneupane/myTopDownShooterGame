@@ -15,9 +15,13 @@ public class WeaponController : MonoBehaviour
     //Weapon Images
     [SerializeField] RawImage shotGunImage;
     [SerializeField] RawImage pistolImage;
+    [SerializeField] RawImage AK47Image;
+
     //Player Images
-    [SerializeField] GameObject pistolPlayer;
-    [SerializeField] GameObject shotgunPlayer;
+    [SerializeField] GameObject handgunPlayer;
+    [SerializeField] GameObject longgunPlayer;
+
+    private bool IsAutomatic = false;
 
 
     private void Start()
@@ -41,16 +45,32 @@ public class WeaponController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchWeapon(0); //pistiol
+            IsAutomatic = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             SwitchWeapon(1); //shortgun
+            IsAutomatic= false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SwitchWeapon(2); //AK47
+            IsAutomatic = true;
         }
 
         //firing
-        if(Input.GetMouseButtonDown(0))
+        if (_currentWeapon != null)
         {
-            FireCurrentWeapon();
+            // Auto fire for AK47
+            if (IsAutomatic && Input.GetMouseButton(0))
+            {
+                FireCurrentWeapon();
+            }
+            // Single fire for Pistol, Shotgun
+            else if (!IsAutomatic && Input.GetMouseButtonDown(0))
+            {
+                FireCurrentWeapon();
+            }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -79,7 +99,7 @@ public class WeaponController : MonoBehaviour
         {
             _currentWeapon.gameObject.SetActive(false);
 
-            DisableCurrentImage();
+            DisableAllImage();
 
         }
 
@@ -96,29 +116,32 @@ public class WeaponController : MonoBehaviour
 
     private void EnableCurrentImage()
     {
-        if(currentWeaponIndex == 0)
+        switch (currentWeaponIndex)
         {
-            shotGunImage.gameObject.SetActive(true);
-            shotgunPlayer.SetActive(false);
+            case 0:
+                pistolImage.gameObject.SetActive(true);
+                handgunPlayer.SetActive(true);
+                break;
+            case 1:
+                shotGunImage.gameObject.SetActive(true);
+                longgunPlayer.SetActive(true);
+                break;
+            case 2:
+                AK47Image.gameObject.SetActive(true);
+                longgunPlayer.SetActive(true);
+                break;
+
         }
-        else if (currentWeaponIndex == 1)
-        {
-            pistolImage.gameObject.SetActive(true); 
-            pistolPlayer.SetActive(false);
-        }
+
     }
 
-    private void DisableCurrentImage()
+    private void DisableAllImage()
     {
-        if (currentWeaponIndex == 0)
-        {
-            shotGunImage.gameObject.SetActive(false);
-            shotgunPlayer.SetActive(true);
-        }
-        else if (currentWeaponIndex == 1)
-        {
-            pistolImage.gameObject.SetActive(false);
-            pistolPlayer.SetActive(true);
-        }
+        pistolImage.gameObject.SetActive(false);
+        handgunPlayer.SetActive(false);
+        shotGunImage.gameObject.SetActive(false);
+        AK47Image.gameObject.SetActive(false);
+        longgunPlayer.SetActive(false);
+
     }
 }

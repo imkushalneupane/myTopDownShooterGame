@@ -48,7 +48,9 @@ public abstract class Weapon : MonoBehaviour
 
     //Abstract Method , must be implementd by child classes
     public abstract void Fire();
-    
+
+    protected virtual bool IsAutomatic => false; // Default to single fire
+
 
     //common methods for all Weapons
     protected void CreateBullet(Vector2 direction)
@@ -101,4 +103,7 @@ public abstract class Weapon : MonoBehaviour
     {
         return isReloading;
     }
+
+
+
 }
