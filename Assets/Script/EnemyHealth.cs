@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public static Action<Transform> OnEnemyDead; //declaring the event
 
+    public Action OnEmenyDead2; //no Arguments
+
     [SerializeField] float _enemyHealth = 5f;
     private float _enemyCurrentHealth;
 
@@ -41,10 +43,12 @@ public class EnemyHealth : MonoBehaviour
 
         if (OnEnemyDead != null)
         {
-            OnEnemyDead.Invoke(transform); // Publishing the event
+            OnEnemyDead.Invoke(transform); // Publishing the event for drop
             Debug.Log("Enemy died and published death event");
+            
         }
 
+        OnEmenyDead2?.Invoke(); //publishing for enemyspwawnner
 
         Debug.Log("EnemyDead");
 

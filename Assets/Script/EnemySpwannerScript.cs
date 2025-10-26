@@ -1,5 +1,6 @@
 
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class EnemySpwannerScript : MonoBehaviour
@@ -15,7 +16,13 @@ public class EnemySpwannerScript : MonoBehaviour
     public Transform enemySpawnner3;
 
     private int _enemiesAlive = 0;
-    private int counter = 0;
+    private int killCounter = 0;
+
+    [SerializeField]
+    EnemyHealth _enemyHealth;  //refrence to EnemyHealth Script
+
+    [SerializeField]
+    private TextMeshProUGUI _killCount;
 
 
     public void playerEnters()
@@ -26,9 +33,15 @@ public class EnemySpwannerScript : MonoBehaviour
 
     public void startspawning()
     {
-        EnemyHealth.OnEnemyDead += SpawnNewEnemyOnDeath; //event subscription
+        _enemyHealth.OnEmenyDead2 += SpawnNewEnemyOnDeath; //event subscription
+        _enemyHealth.OnEmenyDead2 += IncreaseKillCounter;
         SpawnInitialEnemies();
 
+    }
+
+    private void IncreaseKillCounter()
+    {
+        killCounter++;
     }
 
     private void SpawnInitialEnemies()
@@ -37,23 +50,25 @@ public class EnemySpwannerScript : MonoBehaviour
         SpawnEnemyAtSpawner(enemySpawnner2);
         SpawnEnemyAtSpawner(enemySpawnner3);
         _enemiesAlive = 3;
-        counter += 3;
     }
 
     private void SpawnEnemyAtSpawner(Transform spawner)
     {
-        if (counter >= 10) { spawnGun(); return; }
+        if (killCounter < 10)  //spawns until kill count 10 
+        { 
         GameObject newEnemy = Instantiate(_EnemyPrefab, spawner.position, Quaternion.identity);
         Debug.Log($"Spawned enemy at {spawner.name}");
-        
-       
 
-
+        _killCount.text = killCounter.ToString();
+        }  
+        else if (killCounter == 10)  //when kill count 10 , spawn AK
+        {
+            spawnGun();
+        }
     }
 
-    private void SpawnNewEnemyOnDeath(Transform deathPosition)
+    private void SpawnNewEnemyOnDeath()
     {
-        counter++;
 
         _enemiesAlive--; //decrease the no. of active enimes
 
@@ -95,7 +110,8 @@ public class EnemySpwannerScript : MonoBehaviour
     {
         //unsubscribe from the event when this object is destroyed
 
-        EnemyHealth.OnEnemyDead -= SpawnNewEnemyOnDeath;
+        _enemyHealth.OnEmenyDead2 -= SpawnNewEnemyOnDeath;
+        _enemyHealth.OnEmenyDead2 -= IncreaseKillCounter;
 
     }
     
