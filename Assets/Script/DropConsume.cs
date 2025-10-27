@@ -4,13 +4,12 @@ using UnityEngine.UI;
 
 public class DropConsume : MonoBehaviour
 {
-    [SerializeField] PlayerHealth health;
+    [SerializeField] PotionInfoScript health;
     [SerializeField] Pistol pistol;
     [SerializeField] Shortgun shortgun;
     [SerializeField] AK47 Ak47;
 
-    [SerializeField] AudioSource  healAudio;
-    [SerializeField] AudioSource  AmmoPickupAudio;
+    [SerializeField] AudioSource  pickupAudio;
 
     [SerializeField] private Image messageImage;
     
@@ -21,22 +20,23 @@ public class DropConsume : MonoBehaviour
         if (collision.gameObject.CompareTag("HealthPotion"))
         {
             health.GetHealthPotionDrop();
-            healAudio.Play();
+            pickupAudio.Play();
+            Debug.Log("PotionAquired");
         } 
         else if (collision.gameObject.CompareTag("PistolDrop"))
         {
             pistol.GetPistolDrop();
-            AmmoPickupAudio.Play();
+            pickupAudio.Play();
         }
         else if (collision.gameObject.CompareTag("ShotgunDrop"))
         {
             shortgun.GetShotgunDrop();    
-            AmmoPickupAudio.Play();
+            pickupAudio.Play();
         }
         else if (collision.gameObject.CompareTag("AK47Drop"))
         {
             Ak47.GetAK47Drop();
-            AmmoPickupAudio.Play();
+            pickupAudio.Play();
         }
 
         else if (collision.gameObject.CompareTag("AK47"))

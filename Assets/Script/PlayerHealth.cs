@@ -39,10 +39,7 @@ public class PlayerHealth : MonoBehaviour
             invincibleTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.F))
-        {
-            Regenerate();
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -98,7 +95,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.text = _currentHealth.ToString();
     }
 
-    private void Regenerate()
+    public void Regenerate()
     {
 
         if (_currentHealth == _maxHealth || isRegenerating)
@@ -134,10 +131,7 @@ public class PlayerHealth : MonoBehaviour
         isRegenerating = false;
     }
 
-    public void GetHealthPotionDrop()
-    {
-        Regenerate();
-    }
+    
 
     public float getHealth()  //to get health value from other calsses
     {
