@@ -9,10 +9,10 @@ public class KeyDrop: MonoBehaviour
     {
         EnemyHealth.OnEnemyDead += DropKey;
     }
-    private void DropKey(Transform deadTransform)
+    private void DropKey(EnemyHealth deadEnemy)
     {
-        if (deadTransform != transform) return;
-        Instantiate(keyPrefabs, GetRandomizedPostion(deadTransform.position), deadTransform.rotation);
+        if (deadEnemy.gameObject != gameObject) return;
+        Instantiate(keyPrefabs, GetRandomizedPostion(transform.position), transform.rotation);
         Debug.Log("Dropped key ");
     }
     

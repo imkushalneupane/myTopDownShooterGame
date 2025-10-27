@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f62858a9cb48244f88ed76b5b21f79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  _enemyHealth: 5
 --- !u!50 &993400878150350064
 Rigidbody2D:
   serializedVersion: 5
@@ -164,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364e8d759257e60489fc0d8f8adbd1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _flipSpeed: 5
 --- !u!1001 &4882943864071869274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -210,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3fff35c5c1c4089499a7b47d5a397b94, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 3fff35c5c1c4089499a7b47d5a397b94, type: 3}
       propertyPath: m_LocalRotation.w

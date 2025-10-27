@@ -19,27 +19,27 @@ public class EnemyDrop : MonoBehaviour
         EnemyHealth.OnEnemyDead += Drop;
     }
 
-    private void Drop(Transform deadTransform)
+    private void Drop(EnemyHealth deadEnemy)
     {
 
-        // Check if this is the enemy that died
-        if (deadTransform != transform) return;
+        // Check if this is the enemy that died , 
+        if (deadEnemy.gameObject != gameObject) return;
 
         float randomValue   = Random.Range(0f, 100f); //getting random percentage change
 
         if (randomValue <= 20f)  //20% chance for heal portion
         {
-            Instantiate(healthPotion, GetRandomizedPostion(deadTransform.position), deadTransform.transform.rotation);
+            Instantiate(healthPotion, GetRandomizedPostion(transform.position), transform.rotation);
             Debug.Log("Dropped HealPotion ");
         }
         else if(randomValue <= 45f)  //25% chance for pistol bullet
         {
-            Instantiate(pistolBullet , GetRandomizedPostion(deadTransform.position), deadTransform.transform.rotation);
+            Instantiate(pistolBullet , GetRandomizedPostion(transform.position), transform.rotation);
             Debug.Log ("Dropped pistol bullet");
         }
         else if(randomValue <= 60f)  //15% chance for shotgun bullet
         {
-            Instantiate(shotgunBullet,deadTransform.transform.position, deadTransform.transform.rotation);
+            Instantiate(shotgunBullet,transform.position, transform.rotation);
             Debug.Log("Dropped ShotGun bullet");
         }
     }
