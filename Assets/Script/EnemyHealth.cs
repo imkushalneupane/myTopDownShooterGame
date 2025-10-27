@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] float _enemyHealth = 5f;
     private float _enemyCurrentHealth;
 
+    [SerializeField] ParticleSystem _boom;
+
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,10 +50,6 @@ public class EnemyHealth : MonoBehaviour
             
         }
 
-        Debug.Log("EnemyDead");
-
         Destroy(gameObject);
-
-        
     }
 }
