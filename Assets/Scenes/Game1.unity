@@ -9016,8 +9016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c542f9cd2ffeaf24aa5b045edb7ad277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _particleEffect: {fileID: 1935062911}
-  _particleEffect2: {fileID: 1614696354}
+  _particleEffect: {fileID: 1614696354}
+  _particleEffect2: {fileID: 1935062911}
 --- !u!1 &1068648926
 GameObject:
   m_ObjectHideFlags: 0
