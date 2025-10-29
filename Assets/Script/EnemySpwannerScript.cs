@@ -10,6 +10,8 @@ public class EnemySpwannerScript : MonoBehaviour
 
     [Header("Gun Settings")]
     public GameObject _ak47;
+    public GameObject _key;
+    public Transform keySpawnPoint;
     public Transform gunSpawnPoint;
 
     [Header("Spawn Points")]
@@ -25,11 +27,13 @@ public class EnemySpwannerScript : MonoBehaviour
     [SerializeField] private int maxEnemiesAlive = 5; // Maximum enemies allowed at once
     [SerializeField] private float spawnDelay = 2f; // Delay between spawns
     [SerializeField] private int killsToSpawnGun = 10; // Kills needed to spawn AK-47
+    [SerializeField] private int killsToSpawnKey = 15;
     [SerializeField] private int killsToStopSpawning = 20; // Kills when enemies stop spawning
 
     private int killCounter = 0;
     private int _enemiesAlive = 0;
     private bool hasSpawnedGun = false;
+    private bool hasSpawnedKey = false;
     private bool isSpawningActive = false;
     private Coroutine currentSpawningCoroutine;
 
@@ -82,6 +86,12 @@ public class EnemySpwannerScript : MonoBehaviour
         {
             spawnGun();
             hasSpawnedGun = true;
+        }
+        if(killCounter >= killsToSpawnKey && !hasSpawnedKey)
+        {
+            spawnKey();
+            hasSpawnedKey = true;
+
         }
 
         // Stop spawning when we reach the stop spawning kill count
@@ -176,6 +186,14 @@ public class EnemySpwannerScript : MonoBehaviour
         {
             Instantiate(_ak47, gunSpawnPoint.position, Quaternion.identity);
             Debug.Log($"AK-47 spawned at {killCounter} kills!");
+        }
+    }
+        private void spawnKey()
+    {
+        if (_key != null && keySpawnPoint != null)
+        {
+            Instantiate(_key, keySpawnPoint.position, Quaternion.identity);
+            Debug.Log($"key spawned at {killCounter} kills!");
         }
     }
 

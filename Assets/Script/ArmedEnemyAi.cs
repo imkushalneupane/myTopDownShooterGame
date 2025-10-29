@@ -16,6 +16,9 @@ public class ArmedEnemyAi : MonoBehaviour
     public float stopDistance = 1f;
 
     [Header("Detection")]
+    [Range(0, 180f)]
+    public float viewAngle = 90f;
+
     public float detectionRadius = 8f;
     public float attackRange = 6f;
     public LayerMask obstacleMask;
@@ -158,24 +161,29 @@ public class ArmedEnemyAi : MonoBehaviour
         rb.rotation = angle;
     }
 
-    bool CanSeePlayer()
-    {
-        if (player == null) return false;
+bool CanSeePlayer()
+{
+    if (player == null) return false;
 
-        Vector2 direction = (player.position - eyePoint.position);
-        float distance = direction.magnitude;
+    Vector2 dirToPlayer = (player.position - eyePoint.position);
+    float distance = dirToPlayer.magnitude;
 
         if (distance > detectionRadius)
             return false;
+   
+    Vector2 facingDir = transform.right; 
+    float angle = Vector2.Angle(facingDir, dirToPlayer);
 
-        // Raycast that ignores obstacles
-        RaycastHit2D hit = Physics2D.Raycast(eyePoint.position, direction.normalized, distance, playerMask | obstacleMask);
-
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
-            return true;
-
+    if (angle > viewAngle * 0.5f)
         return false;
-    }
+
+    RaycastHit2D hit = Physics2D.Raycast(eyePoint.position, dirToPlayer.normalized, distance, playerMask | obstacleMask);
+    if (hit.collider != null && hit.collider.CompareTag("Player"))
+        return true;
+
+    return false;
+}
+
 
     void ChangeState(State newState)
     {

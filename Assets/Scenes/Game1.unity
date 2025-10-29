@@ -6164,8 +6164,8 @@ MonoBehaviour:
   shotgunbulletPrefab: {fileID: 2912065371968956034, guid: 86e628912da2e0c4e8c8be9b993506e4, type: 3}
   firing_position: {fileID: 254884982}
   secondary_firing_position: {fileID: 1872099882}
-  bulletSpeed: 30
-  fireRate: 0.2
+  bulletSpeed: 10
+  fireRate: 0.1
   bulletLifeTime: 5
   canFire: 1
   bulletSound: {fileID: 843103173}
@@ -6189,8 +6189,9 @@ MonoBehaviour:
   patrolSpeed: 2
   chaseSpeed: 1
   stopDistance: 3
+  viewAngle: 90
   detectionRadius: 10
-  attackRange: 6
+  attackRange: 9
   obstacleMask:
     serializedVersion: 2
     m_Bits: 128
@@ -6374,7 +6375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHealth: 20
-  _boom: {fileID: 0}
+  _boom: {fileID: 1935062911}
 --- !u!82 &843103173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11009,6 +11010,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1326684808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326684809}
+  m_Layer: 0
+  m_Name: KeySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1326684809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326684808}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09, y: -2.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336027736
 GameObject:
   m_ObjectHideFlags: 0
@@ -16789,6 +16821,10 @@ PrefabInstance:
       value: EnemySpwanner
       objectReference: {fileID: 0}
     - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
+      propertyPath: _key
+      value: 
+      objectReference: {fileID: 5997273639765464219, guid: 6e48c93124d94bf4cb583187d9634aa6, type: 3}
+    - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
       propertyPath: _ak47
       value: 
       objectReference: {fileID: 3815574916420207806, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
@@ -16804,6 +16840,10 @@ PrefabInstance:
       propertyPath: gunSpawnPoint
       value: 
       objectReference: {fileID: 893541019}
+    - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
+      propertyPath: keySpawnPoint
+      value: 
+      objectReference: {fileID: 1326684809}
     - target: {fileID: 7943378741304519355, guid: 3e33dfcbb27fb18449a8e98bf957ef37, type: 3}
       propertyPath: killsToSpawnGun
       value: 20
@@ -16945,6 +16985,10 @@ PrefabInstance:
     - target: {fileID: 882039226173267310, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -65.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 894020326766307677, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0007324219
       objectReference: {fileID: 0}
     - target: {fileID: 1433687440498046940, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_Pivot.x
@@ -17319,11 +17363,11 @@ PrefabInstance:
       objectReference: {fileID: 1076863359}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.92
+      value: -72
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.7
+      value: -48.3
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17767,3 +17811,4 @@ SceneRoots:
   - {fileID: 211444425}
   - {fileID: 893541019}
   - {fileID: 1058282331}
+  - {fileID: 1326684809}
