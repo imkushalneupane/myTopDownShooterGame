@@ -87,7 +87,6 @@ public class PlayerHealth : MonoBehaviour
         bgMusic.Stop();
         deathAudio.Play();
         
-
     }
 
     private void UpdateHealthUI()
@@ -136,5 +135,10 @@ public class PlayerHealth : MonoBehaviour
     public float getHealth()  //to get health value from other calsses
     {
         return _currentHealth;
+    }
+
+    public void PlayerDeath()  //access from harazads detection script
+    {
+        PlayerDie();
     }
 }
