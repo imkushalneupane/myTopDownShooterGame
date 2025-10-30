@@ -29,6 +29,7 @@ public class EnemySpwannerScript : MonoBehaviour
     [SerializeField] private int killsToSpawnGun = 10; // Kills needed to spawn AK-47
     [SerializeField] private int killsToSpawnKey = 15;
     [SerializeField] private int killsToStopSpawning = 20; // Kills when enemies stop spawning
+    
 
     private int killCounter = 0;
     private int _enemiesAlive = 0;

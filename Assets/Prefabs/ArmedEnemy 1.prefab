@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHealth: 10
+  _boom: {fileID: 0}
 --- !u!114 &7723458308558977882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ MonoBehaviour:
   shotgunbulletPrefab: {fileID: 2912065371968956034, guid: 86e628912da2e0c4e8c8be9b993506e4, type: 3}
   firing_position: {fileID: 6678982856681971132}
   secondary_firing_position: {fileID: 6678982856681971132}
-  bulletSpeed: 30
+  bulletSpeed: 15
   fireRate: 2
   bulletLifeTime: 5
   canFire: 1
@@ -168,9 +169,11 @@ MonoBehaviour:
   player: {fileID: 0}
   eyePoint: {fileID: 1237906588748895004}
   enemyShooting: {fileID: 7723458308558977882}
+  rotationSpeed: 8
   patrolSpeed: 2
   chaseSpeed: 4
   stopDistance: 1
+  viewAngle: 90
   detectionRadius: 8
   attackRange: 6
   obstacleMask:

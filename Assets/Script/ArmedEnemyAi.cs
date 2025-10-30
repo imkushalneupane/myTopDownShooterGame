@@ -11,13 +11,14 @@ public class ArmedEnemyAi : MonoBehaviour
     public EnemyShooting enemyShooting;
 
     [Header("Movement")]
+    public float rotationSpeed = 8f;
     public float patrolSpeed = 2f;
     public float chaseSpeed = 4f;
     public float stopDistance = 1f;
 
     [Header("Detection")]
     [Range(0, 180f)]
-    public float viewAngle = 90f;
+    public float viewAngle = 180f;
 
     public float detectionRadius = 8f;
     public float attackRange = 6f;
@@ -154,12 +155,15 @@ public class ArmedEnemyAi : MonoBehaviour
         RotateTowards(target);
     }
 
-    void RotateTowards(Vector2 target)
-    {
-        Vector2 dir = (target - (Vector2)transform.position).normalized;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-    }
+void RotateTowards(Vector2 target)
+{
+    Vector2 dir = (target - (Vector2)transform.position).normalized;
+    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    float smoothAngle = Mathf.LerpAngle(rb.rotation, angle, rotationSpeed * Time.deltaTime);
+    rb.rotation = smoothAngle;
+}
+
+    
 
 bool CanSeePlayer()
 {
@@ -206,5 +210,12 @@ bool CanSeePlayer()
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        //aba fov dekhauna
+        Gizmos.color = Color.blue;
+        Vector3 leftBoundary = Quaternion.Euler(0, 0, viewAngle * 0.5f) * transform.right;
+        Vector3 rightBoundary = Quaternion.Euler(0, 0, -viewAngle * 0.5f) * transform.right;
+
+        Gizmos.DrawLine(transform.position, transform.position + leftBoundary * detectionRadius);
+        Gizmos.DrawLine(transform.position, transform.position + rightBoundary * detectionRadius);
     }
 }
