@@ -14,10 +14,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]PlayerHealth _player;  //refrence to PlayerHealth script
     Renderer _renderer; //refrence to renderer
 
-    public ParticleSystem boostParticle; 
-    public AudioSource boostAudio;
+    
 
-    private bool canBoost = true;
+
 
 
     private void Start()
@@ -25,6 +24,7 @@ public class PlayerController : MonoBehaviour
         _player = GetComponent<PlayerHealth>();
         _player.OnPlayerDead += OnDied;
         _renderer = GetComponent<Renderer>();
+        
         
     }
 
@@ -46,19 +46,10 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = new Vector2(moveX, moveY).normalized; //assinging the moveDirection of the Player (up down left right)
 
-        if (Input.GetKeyDown(KeyCode.Space) && canBoost)
-        {
-        
-
-            StartCoroutine(Boost());
-            Debug.Log("Boost! Pressed!");
-            boostParticle.Play();  //playing the particle effect
-            boostAudio.Play();  //plays the boost audio
-        }
-        
-
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);  //position of mouse on screen
     }
+
+   
 
     private void FixedUpdate()
     {
@@ -72,20 +63,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    IEnumerator  Boost()
-    {
-        canBoost = false;
-        moveSpeed = 40f;
-        Debug.Log("Boost");
-
-        yield return new WaitForSeconds(.125f);
-        moveSpeed = 5f;
-        yield return new WaitForSeconds(.125f);
-        boostParticle.Stop();  //ending the particle effect
-
-        yield return new WaitForSeconds(2.5f);
-        canBoost = true;
-
-    }
+  
 
 }

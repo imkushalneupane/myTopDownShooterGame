@@ -1065,6 +1065,17 @@ Transform:
   - {fileID: 1728801313}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1267596759 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6023340511255672807, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+  m_PrefabInstance: {fileID: 1594948974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
 --- !u!4 &1311710191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477899206802193177, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
@@ -1380,6 +1391,10 @@ PrefabInstance:
       propertyPath: pistolReloadStatus
       value: 
       objectReference: {fileID: 1019532299}
+    - target: {fileID: 5474912670050874289, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      propertyPath: AK47Image
+      value: 
+      objectReference: {fileID: 1267596759}
     - target: {fileID: 5474912670050874289, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: pistolImage
       value: 
