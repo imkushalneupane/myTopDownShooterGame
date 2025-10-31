@@ -9,6 +9,7 @@ public class ArmedEnemyAi : MonoBehaviour
     public Transform player;
     public Transform eyePoint;
     public EnemyShooting enemyShooting;
+   
 
     [Header("Movement")]
     public float rotationSpeed = 8f;

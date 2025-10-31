@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class JuggernutAi : MonoBehaviour
 {
-    public enum State { Patrol, Chase, Search, Attack }
+    public enum State { Patrol, Rocket, Chase, Search, Attack }
 
     [Header("References")]
     public Transform[] patrolPoints;
     public Transform player;
     public Transform eyePoint;
     public EnemyShooting enemyShooting;
+     public RocketShooting rocketShooting;
 
     [Header("Movement")]
     public float rotationSpeed = 8f;
@@ -20,6 +21,8 @@ public class JuggernutAi : MonoBehaviour
 
 
     public float detectionRadius = 8f;
+    public float RocketRange = 14f;
+
     public float attackRange = 6f;
     public LayerMask obstacleMask;
     public LayerMask playerMask;
@@ -59,6 +62,9 @@ public class JuggernutAi : MonoBehaviour
             case State.Patrol:
                 Patrol();
                 break;
+            case State.Rocket:
+                Rocket();
+                break;
 
             case State.Chase:
                 Chase();
@@ -80,12 +86,14 @@ public class JuggernutAi : MonoBehaviour
 
             if (Vector2.Distance(transform.position, player.position) <= attackRange)
                 ChangeState(State.Attack);
+            else if (Vector2.Distance(transform.position, player.position) <= RocketRange)
+                ChangeState(State.Rocket);
             else
                 ChangeState(State.Chase);
         }
         else
         {
-            if (state == State.Attack || state == State.Chase)
+            if (state == State.Attack || state == State.Chase|| state == State.Rocket)
                 ChangeState(State.Search);
         }
     }
@@ -103,6 +111,21 @@ public class JuggernutAi : MonoBehaviour
         if (Vector2.Distance(transform.position, patrolPoints[currentPatrolIndex].position) < stopDistance)
             GoToNextPatrolPoint();
     }
+void Rocket()
+{
+    if (player == null || rocketShooting == null) return;
+
+    // Face the player smoothly
+    RotateTowards(player.position);
+
+    // Move slowly toward player or hold position
+    rb.linearVelocity = Vector2.zero; // Optional: Stop moving while firing
+    // Or: MoveTowards(player.position, chaseSpeed * 0.5f);
+
+    // Fire rockets with cooldown
+    if (rocketShooting.CanShoot())
+        rocketShooting.TryShootRocket();
+}
 
     void Chase()
     {
@@ -205,6 +228,10 @@ public class JuggernutAi : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+
+        //for rocket 
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(transform.position, attackRange + 4f);
         /*aba fov dekhauna
         Gizmos.color = Color.blue;
         Vector3 leftBoundary = Quaternion.Euler(0, 0, viewAngle * 0.5f) * transform.right;

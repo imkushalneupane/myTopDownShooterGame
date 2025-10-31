@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         _currentHealth -= amount;
         _currentHealth = Mathf.Max( _currentHealth,0f);  //clam the _currnethealth between these valuse
