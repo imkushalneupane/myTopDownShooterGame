@@ -6,7 +6,7 @@ public class NitroControllerScript : MonoBehaviour
 {
     public PlayerController _player;
 
-    private int _maxNitroPacks = 3;
+    private int _maxNitroPacks = 1;
     private int _currentNitroPacks;
     private int _refillTime = 3;
     private bool _isRefilling = false;
@@ -22,6 +22,7 @@ public class NitroControllerScript : MonoBehaviour
     void Start()
     {
         _currentNitroPacks = _maxNitroPacks;
+        NitroSlider.maxValue = _maxNitroPacks;  //sets the upper limit of the silder 
         ShowNitrosAvailable();
     }
 
@@ -76,4 +77,12 @@ public class NitroControllerScript : MonoBehaviour
     {
         NitroSlider.value = _currentNitroPacks;
     }
+
+    public void OnCylinderPick()
+    {
+        _maxNitroPacks++;    
+        NitroSlider.maxValue = _maxNitroPacks;
+        StartCoroutine(RefillNitro());
+    }
+
 }

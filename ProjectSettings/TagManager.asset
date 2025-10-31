@@ -16,6 +16,8 @@ TagManager:
   - AK47
   - Spikes
   - PressurePlate
+  - NitroPack
+  - NitroCylinder
   layers:
   - Default
   - TransparentFX

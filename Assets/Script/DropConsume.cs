@@ -8,11 +8,17 @@ public class DropConsume : MonoBehaviour
     [SerializeField] Pistol pistol;
     [SerializeField] Shortgun shortgun;
     [SerializeField] AK47 Ak47;
+    [SerializeField] NitroControllerScript _nitro;
+
 
     [SerializeField] AudioSource  pickupAudio;
 
-    [SerializeField] private Image messageImage;
-    
+    [SerializeField] private Image AKMessageImage;
+    [SerializeField] private Image nitroPackMessageImage;
+    [SerializeField] private Image nitroCylinderMessageImage;  
+
+    [SerializeField] private GameObject NitroPack;
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,19 +44,47 @@ public class DropConsume : MonoBehaviour
             Ak47.GetAK47Drop();
             pickupAudio.Play();
         }
+       
 
         else if (collision.gameObject.CompareTag("AK47"))
         {
             WeaponController.HasAK47 = true;
-            ShowMessage();
+            ShowAKMessage();
+            pickupAudio.Play();
+        }
+        else if (collision.gameObject.CompareTag("NitroPack"))
+        {
+            NitroPack.gameObject.SetActive(true);
+            ShowNitroPackMessage();
+            pickupAudio.Play();
+        }
+        else if (collision.gameObject.CompareTag("NitroCylinder"))
+        {
+            if (_nitro!= null)
+            {
+                _nitro.OnCylinderPick();
+                ShowNitroCylinderMessage();
+            }
+            pickupAudio.Play();
+           
         }
 
     }
 
-    private void ShowMessage()
+    private void ShowAKMessage()
     {
         Time.timeScale = 0f;
-        messageImage.gameObject.SetActive(true);
+        AKMessageImage.gameObject.SetActive(true);
+    }
+    private void ShowNitroPackMessage()
+    {
+        Time.timeScale = 0f;
+        nitroPackMessageImage.gameObject.SetActive(true);
+    }
+    private void ShowNitroCylinderMessage()
+    {
+        Time.timeScale = 0f;
+        nitroCylinderMessageImage.gameObject.SetActive(true);
     }
 
     public void OnXPressed()
