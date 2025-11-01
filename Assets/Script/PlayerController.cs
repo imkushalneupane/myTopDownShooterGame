@@ -48,10 +48,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Read from the Move and Aim actions
+        // Movement
         moveDirection = moveAction.ReadValue<Vector2>().normalized;
-        aimDirection = aimAction.ReadValue<Vector2>();
 
+        // Aim - only update if we have significant input
+        Vector2 currentAim = aimAction.ReadValue<Vector2>();
+        if (currentAim.magnitude > 0.3f) // Deadzone
+        {
+            aimDirection = currentAim;
+        }
     }
 
     private void FixedUpdate()
@@ -59,10 +64,12 @@ public class PlayerController : MonoBehaviour
         // Movement
         rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
 
-        // Rotation based on right joystick
+        // Rotation - always use the last good aim direction
+        if (aimDirection != Vector2.zero)
+        {
             float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
             rb.rotation = aimAngle;
-        
+        }
     }
 
     private void OnDestroy()

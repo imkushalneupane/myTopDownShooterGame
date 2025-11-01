@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PotionInfoScript : MonoBehaviour
 {
@@ -14,24 +15,34 @@ public class PotionInfoScript : MonoBehaviour
 
     private int _potionCount = 1;
 
+    // Mobile Input
+    [SerializeField] private PlayerInput playerInput;
+    private InputAction usePotionAction;
+
     private void Start()
     {
-        ShowPotioInfo();
+        ShowPotionInfo();
+
+        // Get mobile input
+        
+        usePotionAction = playerInput.actions["Heal"];
+
+        usePotionAction.performed += OnUsePotionPerformed;
     }
 
-    private void Update()
+    // Mobile Input Event
+    private void OnUsePotionPerformed(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.E) && _potionCount > 0)
+        if (_potionCount > 0)
         {
             _health.Regenerate();   //regeneration via PlayerHealth class.
             _potionCount--;
-            ShowPotioInfo();
+            ShowPotionInfo();
             healAudio.Play();
         }
-        
     }
 
-    private void ShowPotioInfo()   //shows no of potions available
+    private void ShowPotionInfo()   //shows no of potions available
     {
         _potionInfo.text = _potionCount.ToString();
     }
@@ -41,10 +52,15 @@ public class PotionInfoScript : MonoBehaviour
         if (_potionCount < maxPotionCapacity)
         {
             _potionCount++;
-            ShowPotioInfo();
+            ShowPotionInfo();
         }
     }
 
-
-
+    private void OnDestroy()
+    {
+        if (usePotionAction != null)
+        {
+            usePotionAction.performed -= OnUsePotionPerformed;
+        }
+    }
 }
