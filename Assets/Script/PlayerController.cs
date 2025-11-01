@@ -1,24 +1,28 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
-    public WeaponController weaponController;  // reference to the WeaponController Script
+    public WeaponController weaponController;
 
     Vector2 moveDirection;
-    Vector2 mousePosition;
+    Vector2 aimDirection;
 
-    [SerializeField] PlayerHealth _player;  // reference to PlayerHealth script
-    Renderer _renderer; // reference to renderer
+    [SerializeField] PlayerHealth _player;
+    Renderer _renderer;
 
-    // Input System components
-    private PlayerInput playerInput;
+    // Input Actions
     private InputAction moveAction;
-    private InputAction mousePositionAction;
+    private InputAction aimAction;
+
+    // Joystick References (to disable on death)
+    [Header("Mobile Joysticks")]
+    [SerializeField] private OnScreenStick leftJoystick;
+    [SerializeField] private OnScreenStick rightJoystick;
 
     private void Start()
     {
@@ -26,16 +30,10 @@ public class PlayerController : MonoBehaviour
         _player.OnPlayerDead += OnDied;
         _renderer = GetComponent<Renderer>();
 
-        // Initialize Input System
-        playerInput = GetComponent<PlayerInput>();
-        if (playerInput == null)
-        {
-            playerInput = gameObject.AddComponent<PlayerInput>();
-        }
-
-        // Get input actions
+        // Get the Input Actions from the PlayerInput component
+        PlayerInput playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
-        mousePositionAction = playerInput.actions["MousePosition"];
+        aimAction = playerInput.actions["Aim"];
     }
 
     private void OnDied()
@@ -43,32 +41,30 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 0f;
         _renderer.material.color = Color.grey;
 
-        // Disable input when player dies
-        if (playerInput != null)
-        {
-            playerInput.enabled = false;
-        }
+        // Disable joysticks on death
+        if (leftJoystick != null) leftJoystick.enabled = false;
+        if (rightJoystick != null) rightJoystick.enabled = false;
     }
 
     void Update()
     {
-        // Get movement input from new Input System
+        // Read from the Move and Aim actions
         moveDirection = moveAction.ReadValue<Vector2>().normalized;
+        aimDirection = aimAction.ReadValue<Vector2>();
 
-        // Get mouse position from new Input System
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePositionAction.ReadValue<Vector2>());
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed; // Implementing Actual Movement
+        // Movement
+        rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
 
-        Vector2 aimDirection = mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = aimAngle;
+        // Rotation based on right joystick
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = aimAngle;
+        
     }
 
-    
     private void OnDestroy()
     {
         if (_player != null)
