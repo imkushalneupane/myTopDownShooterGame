@@ -21,6 +21,8 @@ public class PotionInfoScript : MonoBehaviour
 
     private void Start()
     {
+        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<UnityEngine.InputSystem.PlayerInput>();
+
         ShowPotionInfo();
 
         // Get mobile input

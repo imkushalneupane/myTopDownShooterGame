@@ -24,6 +24,8 @@ public class NitroControllerScript : MonoBehaviour
 
     void Start()
     {
+        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<UnityEngine.InputSystem.PlayerInput>();
+
         _currentNitroPacks = _maxNitroPacks;
         NitroSlider.maxValue = _maxNitroPacks;
         ShowNitrosAvailable();
