@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour
 {
-    /* public Slider HealthSlider;
-   public Slider EaseHealthSlider;
+    public Slider HealthSlider;
+/*    public Slider EaseHealthSlider;
     private float lerpSpeed = 0.05f; */
 
     public static Action<EnemyHealth> OnEnemyDead; //declaring the event
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         _enemyCurrentHealth = _enemyHealth;
-       /* HealthSlider.maxValue = _enemyHealth;*/
+        HealthSlider.maxValue = _enemyHealth;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -47,13 +47,13 @@ public class EnemyHealth : MonoBehaviour
         {
             EnemyDie();
         }
-  /*
+
         if (HealthSlider.value != _enemyHealth)
         {
             HealthSlider.value = _enemyCurrentHealth;
         }
 
-             if(HealthSlider.value != EaseHealthSlider.value) 
+             /*  if(HealthSlider.value != EaseHealthSlider.value) 
         {
             EaseHealthSlider.value = Mathf.Lerp(EaseHealthSlider.value, _enemyCurrentHealth, lerpSpeed);
         }*/
@@ -66,7 +66,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (OnEnemyDead != null)
         {
-            OnEnemyDead.Invoke(this); // Publishing the event for drop
+             // Publishing the event for drop
             Debug.Log("Enemy died and published death event");
             
         }
