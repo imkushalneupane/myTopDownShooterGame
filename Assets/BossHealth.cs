@@ -26,6 +26,8 @@ public class BossHealth : MonoBehaviour
     void Start()
     {
         _enemyCurrentHealth = _enemyHealth;
+
+        if (HealthSlider!= null)
         HealthSlider.maxValue = _enemyHealth;
     }
 
@@ -48,15 +50,18 @@ public class BossHealth : MonoBehaviour
             EnemyDie();
         }
 
-        if (HealthSlider.value != _enemyHealth)
+        if (HealthSlider != null)
         {
-            HealthSlider.value = _enemyCurrentHealth;
-        }
+            if (HealthSlider.value != _enemyHealth)
+            {
+                HealthSlider.value = _enemyCurrentHealth;
+            }
 
-             /*  if(HealthSlider.value != EaseHealthSlider.value) 
-        {
-            EaseHealthSlider.value = Mathf.Lerp(EaseHealthSlider.value, _enemyCurrentHealth, lerpSpeed);
-        }*/
+            /*  if(HealthSlider.value != EaseHealthSlider.value) 
+       {
+           EaseHealthSlider.value = Mathf.Lerp(EaseHealthSlider.value, _enemyCurrentHealth, lerpSpeed);
+       }*/
+        }
     }
 
 
@@ -72,5 +77,6 @@ public class BossHealth : MonoBehaviour
         }
 
         Destroy(gameObject);
+        HealthSlider.gameObject.SetActive(false);
     }
 }
