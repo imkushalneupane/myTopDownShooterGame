@@ -19,4 +19,10 @@ public class OnDeadEffects : MonoBehaviour
         _particleEffect?.Play();
         _particleEffect2?.Play();
     }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe when this object is destroyed
+        EnemyHealth.OnEnemyDead -= PlayParticleEffects;
+    }
 }
