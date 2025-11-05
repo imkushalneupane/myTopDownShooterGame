@@ -24510,10 +24510,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3555064935001117777, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: _spikeController
-      value: 
-      objectReference: {fileID: 1337697337}
     - target: {fileID: 3900417002309399906, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: healthBar
       value: 
@@ -24571,17 +24567,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 908500346}
     - target: {fileID: 4118401893206811966, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: messageImage
-      value: 
-      objectReference: {fileID: 2094672053}
-    - target: {fileID: 4118401893206811966, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: AKMessageImage
       value: 
       objectReference: {fileID: 2094672053}
-    - target: {fileID: 4118401893206811966, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: nitroMessageImage
-      value: 
-      objectReference: {fileID: 1145096296}
     - target: {fileID: 4118401893206811966, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: nitroPackMessageImage
       value: 
@@ -24598,18 +24586,6 @@ PrefabInstance:
       propertyPath: pistolReloadStatus
       value: 
       objectReference: {fileID: 157822590}
-    - target: {fileID: 5458339144494365335, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: damage
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458339144494365335, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: fireRate
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5458339144494365335, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: fireForce
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5458339144494365335, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: shotGunText
       value: 

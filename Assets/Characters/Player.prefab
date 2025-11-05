@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 4495101315234104786}
   - component: {fileID: 6565969742170797210}
   - component: {fileID: 3555098350648628772}
-  - component: {fileID: 3555064935001117777}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -181,8 +180,6 @@ MonoBehaviour:
   rb: {fileID: 6565969742170797210}
   weaponController: {fileID: 5474912670050874289}
   _player: {fileID: 3900417002309399906}
-  boostParticle: {fileID: 8647931833189044667}
-  boostAudio: {fileID: 7728727263195476641}
 --- !u!114 &3900417002309399906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,19 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a950b5f2331f84347ad247a172ed6ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3555064935001117777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459447554865436358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3717da36ccdc055479e9d82992aa8691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  _spikeController: {fileID: 0}
 --- !u!1 &3568669628466875926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,8 +1086,12 @@ MonoBehaviour:
   pistol: {fileID: 5427580113216015673}
   shortgun: {fileID: 5458339144494365335}
   Ak47: {fileID: 489336206323325086}
+  _nitro: {fileID: 0}
   pickupAudio: {fileID: 6604593406599053002}
-  messageImage: {fileID: 0}
+  AKMessageImage: {fileID: 0}
+  nitroPackMessageImage: {fileID: 0}
+  nitroCylinderMessageImage: {fileID: 0}
+  NitroPack: {fileID: 0}
 --- !u!82 &6604593406599053002
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1556,7 +1544,7 @@ MonoBehaviour:
   fireForce: 10
   firePoint: {fileID: 5188235280592192131}
   bulletPrefab: {fileID: 4178365505701310623, guid: a16998ec015295f49b2e26bd96acad8d, type: 3}
-  nextFireTime: 0
+  nextFireTime: 1
   magazineCapacity: 10
   pistolText: {fileID: 0}
   pistolReloadStatus: {fileID: 0}
@@ -1922,11 +1910,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!198 &8647931833189044667 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1260262680682125493, guid: 366377810aaf4fc4ab2be725a54c5712, type: 3}
-  m_PrefabInstance: {fileID: 7601788192953190670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7655660283640224923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2036,9 +2019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da80185346ff2eb438f2c526535985bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shortgun
-  fireRate: 0.8
-  damage: 3
-  fireForce: 30
+  fireRate: 0.4
+  damage: 7
+  fireForce: 50
   firePoint: {fileID: 1251467243408227565}
   bulletPrefab: {fileID: 4178365505701310623, guid: 12a32548067c32a4c8f37e601ec4266b, type: 3}
   nextFireTime: 0
