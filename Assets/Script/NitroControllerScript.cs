@@ -6,6 +6,7 @@ public class NitroControllerScript : MonoBehaviour
 {
     public PlayerController _player;
 
+    [SerializeField]
     private int _maxNitroPacks = 1;
     private int _currentNitroPacks;
     private int _refillTime = 3;

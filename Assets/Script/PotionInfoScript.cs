@@ -11,8 +11,8 @@ public class PotionInfoScript : MonoBehaviour
     AudioSource healAudio;
     [SerializeField]
     int maxPotionCapacity = 4;
-
-    private int _potionCount = 1;
+    [SerializeField]
+    private int _potionCount = 2;
 
     private void Start()
     {
