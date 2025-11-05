@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DropConsume : MonoBehaviour
@@ -69,6 +71,18 @@ public class DropConsume : MonoBehaviour
            
         }
 
+
+        else if (collision.gameObject.CompareTag("Portal"))
+        {
+            StartCoroutine(TeleportPlayer());
+        }
+
+    }
+
+    private IEnumerator TeleportPlayer()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("boss_fight");
     }
 
     private void ShowAKMessage()
