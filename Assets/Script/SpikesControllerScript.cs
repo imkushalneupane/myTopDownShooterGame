@@ -10,9 +10,6 @@ public class SpikesControllerScript : MonoBehaviour
     [SerializeField]
     private Animator _spikeDown;
 
-    [SerializeField]
-    private AudioSource _spikeAudio;
-
     public void OnPressed()
     {
         StartCoroutine(OnPressurePlatePressed());
@@ -22,13 +19,9 @@ public class SpikesControllerScript : MonoBehaviour
     {
         _spikeUp.SetBool("PressureOn",true);
         _spikeDown.SetBool("PressureOn", true);
-        yield return new WaitForSeconds(.125f);
-        _spikeAudio.Play();
 
         yield return new WaitForSeconds(5f);
         _spikeUp.SetBool("PressureOn", false);
         _spikeDown.SetBool("PressureOn", false);
-        yield return new WaitForSeconds(.125f);
-        _spikeAudio.Play();
     }
 }
