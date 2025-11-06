@@ -1690,7 +1690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.874939, y: -40.5}
+  m_AnchoredPosition: {x: -6.8749084, y: -40.5}
   m_SizeDelta: {x: -79.2222, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &900130115
@@ -1936,7 +1936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5, y: -34.249996}
+  m_AnchoredPosition: {x: -5.0000305, y: -34.249996}
   m_SizeDelta: {x: -10, y: 53.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102063037
@@ -2237,7 +2237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.7402954, y: 7.6447}
+  m_AnchoredPosition: {x: -2.7402344, y: 7.6447}
   m_SizeDelta: {x: -23.7505, y: -19.1803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288296988
@@ -2553,6 +2553,10 @@ PrefabInstance:
       propertyPath: shotGunImage
       value: 
       objectReference: {fileID: 299599518}
+    - target: {fileID: 6904852954877964890, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 224c66cc121ab2d49b1381f43d096db7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3399,7 +3403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -31.208923, y: -25.908875}
+  m_AnchoredPosition: {x: -31.208984, y: -25.908875}
   m_SizeDelta: {x: -371.3365, y: 46.2081}
   m_Pivot: {x: 0.6206364, y: 0.43930262}
 --- !u!114 &1921349369
