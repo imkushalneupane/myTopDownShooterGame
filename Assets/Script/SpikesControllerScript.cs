@@ -22,13 +22,13 @@ public class SpikesControllerScript : MonoBehaviour
     {
         _spikeUp.SetBool("PressureOn",true);
         _spikeDown.SetBool("PressureOn", true);
-        yield return new WaitForSeconds(.125f);
+        yield return new WaitForSeconds(.1f);
         _spikesAudio.Play();
 
         yield return new WaitForSeconds(5f);
         _spikeUp.SetBool("PressureOn", false);
         _spikeDown.SetBool("PressureOn", false);
-        yield return new WaitForSeconds(.125f);
+        yield return new WaitForSeconds(.1f);
         _spikesAudio.Play();
     }
 }

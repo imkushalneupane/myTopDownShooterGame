@@ -7,6 +7,7 @@ public class SpawnDoor : MonoBehaviour
     [SerializeField] private EnemySpwannerScript enemySpawner; 
 
     [SerializeField] GameObject killCount;
+    [SerializeField] GameObject pitfallMessage;
 
     
 
@@ -29,6 +30,8 @@ public class SpawnDoor : MonoBehaviour
 
         killCount.SetActive(true);
         enemySpawner.IsPlayerInPit = true;
+        pitfallMessage.SetActive(true);
+
 
         Destroy(gameObject);
     }
