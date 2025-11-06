@@ -13369,25 +13369,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c89660c6a477449bffe86846828840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
---- !u!114 &921083496
+--- !u!114 &921083493 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 921083483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3717da36ccdc055479e9d82992aa8691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HazardCollisionDetection
-  _spikeController: {fileID: 1337697337}
-  _spikeController2: {fileID: 784120328}
---- !u!114 &921083502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7181561582852983622, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+  m_PrefabInstance: {fileID: 2369338173782155883}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921083483}
   m_Enabled: 1
@@ -13395,24 +13380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 92ab0276afd5dda4aa6d36696517884b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &929420935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19743212530835105, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
@@ -26363,6 +26330,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1690170826
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -127.98891
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 33.860516
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 103747788249502742, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815574916420207806, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
+      propertyPath: m_Name
+      value: Ak-47
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa44965ab6a69864bacb7f13b83cfc5f, type: 3}
 --- !u!1 &1692476866
 GameObject:
   m_ObjectHideFlags: 0
@@ -32833,6 +32857,10 @@ PrefabInstance:
       propertyPath: _health
       value: 
       objectReference: {fileID: 248709105}
+    - target: {fileID: 5753053466824519553, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 921083493}
     - target: {fileID: 5915375072150159076, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -32905,6 +32933,10 @@ PrefabInstance:
       propertyPath: boostAudio
       value: 
       objectReference: {fileID: 1009765378}
+    - target: {fileID: 7233325313493692010, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 921083493}
     - target: {fileID: 7233325313493692010, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: boostParticle
       value: 
@@ -33045,6 +33077,14 @@ PrefabInstance:
       propertyPath: nitroCylinderMessageImage
       value: 
       objectReference: {fileID: 538764456}
+    - target: {fileID: 4369354831151280426, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      propertyPath: _spikeController
+      value: 
+      objectReference: {fileID: 1337697337}
+    - target: {fileID: 4369354831151280426, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      propertyPath: _spikeController2
+      value: 
+      objectReference: {fileID: 784120328}
     - target: {fileID: 5427580113216015673, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: pistolText
       value: 
@@ -33073,28 +33113,10 @@ PrefabInstance:
       propertyPath: shotGunImage
       value: 
       objectReference: {fileID: 2022256422}
-    - target: {fileID: 6904852954877964890, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: m_Pitch
-      value: 0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 6904852954877964890, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: m_Volume
-      value: 0.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6904852954877964890, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 224c66cc121ab2d49b1381f43d096db7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1459447554865436358, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 921083496}
-    - targetCorrespondingSourceObject: {fileID: 1459447554865436358, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 921083502}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
 --- !u!1001 &2715856766353655409
 PrefabInstance:
@@ -33433,3 +33455,4 @@ SceneRoots:
   - {fileID: 479971615}
   - {fileID: 1486052838}
   - {fileID: 1362597875}
+  - {fileID: 1690170826}

@@ -25,6 +25,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "c20fc08c-4bbb-4129-a84e-87dcd4a3eb81",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Fire",
                     "type": "Button",
                     "id": "f1239ebd-00f7-4e31-b5d5-47110623e272",
@@ -150,12 +159,12 @@
                 },
                 {
                     "name": "",
-                    "id": "e1d08764-efaa-4e2b-84fa-207c8cf2efc5",
+                    "id": "8eb5a7f0-329d-4da3-ad28-f3b1d6507ecb",
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

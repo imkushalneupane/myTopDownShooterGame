@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction aimAction;
     private InputAction mousePositionAction;
+    private InputAction fireAction;
 
     // Joystick References (to disable on death)
     [Header("Mobile Joysticks")]
@@ -27,6 +28,12 @@ public class PlayerController : MonoBehaviour
 
     // Reference to main camera for mouse position conversion
     private Camera mainCamera;
+
+    // Track active input method
+    private enum InputMethod { Mouse, Gamepad }
+    private InputMethod currentInputMethod = InputMethod.Mouse;
+    private Vector2 lastGamepadAim = Vector2.up;
+    private Vector2 lastMousePosition;
 
     private void Start()
     {
@@ -39,7 +46,10 @@ public class PlayerController : MonoBehaviour
         PlayerInput playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         aimAction = playerInput.actions["Aim"];
-      
+        mousePositionAction = playerInput.actions["MousePosition"];
+        fireAction = playerInput.actions["Fire"]; 
+
+        lastMousePosition = mousePositionAction.ReadValue<Vector2>();
     }
 
     private void OnDied()
@@ -57,29 +67,55 @@ public class PlayerController : MonoBehaviour
         // Movement
         moveDirection = moveAction.ReadValue<Vector2>().normalized;
 
-        // Handle aiming - check both methods
+        // Handle aiming
         HandleAiming();
     }
 
     private void HandleAiming()
     {
-        //  Check for mouse input first
-        Vector2 mousePos = aimAction.ReadValue<Vector2>();
-        if (mousePos != Vector2.zero)
+        Vector2 gamepadAim = aimAction.ReadValue<Vector2>();
+        Vector2 currentMousePos = mousePositionAction.ReadValue<Vector2>();
+
+        // Check if mouse has moved significantly
+        bool mouseMoved = (currentMousePos - lastMousePosition).sqrMagnitude > 25f; // 5 pixel threshold
+
+        // Check if fire button is pressed with mouse
+        bool mouseFire = fireAction.triggered && mouseMoved;
+
+        // If gamepad is being actively used, switch to gamepad
+        if (gamepadAim.magnitude > 0.3f)
         {
-            // Convert mouse screen position to world position
-            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.nearClipPlane));
-            aimDirection = (mouseWorldPos - transform.position).normalized;
-            return;
+            currentInputMethod = InputMethod.Gamepad;
+            lastGamepadAim = gamepadAim;
+            aimDirection = gamepadAim.normalized;
+        }
+        // If mouse is moved or fire button is pressed with mouse, switch to mouse
+        else if (mouseMoved || mouseFire)
+        {
+            currentInputMethod = InputMethod.Mouse;
+            aimDirection = GetMouseAimDirection();
+        }
+        // Otherwise maintain current input method
+        else
+        {
+            if (currentInputMethod == InputMethod.Gamepad)
+            {
+                aimDirection = lastGamepadAim.normalized;
+            }
+            else
+            {
+                aimDirection = GetMouseAimDirection();
+            }
         }
 
-        //  Check for gamepad/joystick input
-        Vector2 currentAim = aimAction.ReadValue<Vector2>();
-        if (currentAim.magnitude > 0.3f) // Deadzone
-        {
-            aimDirection = currentAim.normalized;
-        }
-        // If neither has input, aimDirection remains the same as last frame
+        lastMousePosition = currentMousePos;
+    }
+
+    private Vector2 GetMouseAimDirection()
+    {
+        Vector2 mousePos = mousePositionAction.ReadValue<Vector2>();
+        Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.nearClipPlane));
+        return (mouseWorldPos - transform.position).normalized;
     }
 
     private void FixedUpdate()
