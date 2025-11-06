@@ -7,6 +7,8 @@ public class HazardCollisionDetection : MonoBehaviour
 
     [SerializeField]
     private SpikesControllerScript _spikeController;
+    [SerializeField]
+    private SpikesControllerScript _spikeController2;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class HazardCollisionDetection : MonoBehaviour
         if (collision.gameObject.CompareTag("PressurePlate"))
         {
             _spikeController.OnPressed();
+            _spikeController2.OnPressed();
         }
 
     }
