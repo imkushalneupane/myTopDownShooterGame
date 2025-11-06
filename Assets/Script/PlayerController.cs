@@ -18,22 +18,28 @@ public class PlayerController : MonoBehaviour
     // Input Actions
     private InputAction moveAction;
     private InputAction aimAction;
+    private InputAction mousePositionAction;
 
     // Joystick References (to disable on death)
     [Header("Mobile Joysticks")]
     [SerializeField] private OnScreenStick leftJoystick;
     [SerializeField] private OnScreenStick rightJoystick;
 
+    // Reference to main camera for mouse position conversion
+    private Camera mainCamera;
+
     private void Start()
     {
         _player = GetComponent<PlayerHealth>();
         _player.OnPlayerDead += OnDied;
         _renderer = GetComponent<Renderer>();
+        mainCamera = Camera.main;
 
         // Get the Input Actions from the PlayerInput component
         PlayerInput playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions["Move"];
         aimAction = playerInput.actions["Aim"];
+      
     }
 
     private void OnDied()
@@ -51,12 +57,29 @@ public class PlayerController : MonoBehaviour
         // Movement
         moveDirection = moveAction.ReadValue<Vector2>().normalized;
 
-        // Aim - only update if we have significant input
+        // Handle aiming - check both methods
+        HandleAiming();
+    }
+
+    private void HandleAiming()
+    {
+        //  Check for mouse input first
+        Vector2 mousePos = aimAction.ReadValue<Vector2>();
+        if (mousePos != Vector2.zero)
+        {
+            // Convert mouse screen position to world position
+            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.nearClipPlane));
+            aimDirection = (mouseWorldPos - transform.position).normalized;
+            return;
+        }
+
+        //  Check for gamepad/joystick input
         Vector2 currentAim = aimAction.ReadValue<Vector2>();
         if (currentAim.magnitude > 0.3f) // Deadzone
         {
-            aimDirection = currentAim;
+            aimDirection = currentAim.normalized;
         }
+        // If neither has input, aimDirection remains the same as last frame
     }
 
     private void FixedUpdate()
