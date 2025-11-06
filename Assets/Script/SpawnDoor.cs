@@ -6,22 +6,30 @@ public class SpawnDoor : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private EnemySpwannerScript enemySpawner; 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            GameObject door = Instantiate(doorPrefab, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
-            Debug.Log("Door spawned!!");
+    [SerializeField] GameObject killCount;
 
-            if(enemySpawner != null)
-            {
-                enemySpawner.playerEnters();
-                Debug.Log("Enemies are spawned");
-            }
-            else
-            {
-                Debug.LogWarning("EnemySpawner reference not assigned!");
-            }
+    
+
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject door = Instantiate(doorPrefab, spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+        Debug.Log("Door spawned!!");
+
+        if (enemySpawner != null)
+        {
+            enemySpawner.playerEnters();
+            Debug.Log("Enemies are spawned");
         }
+        else
+        {
+            Debug.LogWarning("EnemySpawner reference not assigned!");
+        }
+
+        killCount.SetActive(true);
+        enemySpawner.IsPlayerInPit = true;
+
+        Destroy(gameObject);
     }
 }

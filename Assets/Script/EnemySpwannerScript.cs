@@ -38,6 +38,8 @@ public class EnemySpwannerScript : MonoBehaviour
     private bool isSpawningActive = false;
     private Coroutine currentSpawningCoroutine;
 
+    public bool IsPlayerInPit = false;
+
     // Track if we've already processed this enemy death to prevent double counting
     private System.Collections.Generic.HashSet<EnemyHealth> processedEnemies = new System.Collections.Generic.HashSet<EnemyHealth>();
 
@@ -71,9 +73,14 @@ public class EnemySpwannerScript : MonoBehaviour
         processedEnemies.Add(deadEnemy);
 
         // Handle the death
-        IncreaseKillCounter();
-        _enemiesAlive--;
-        Debug.Log($"Enemy died. Enemies alive: {_enemiesAlive}, Kills: {killCounter}");
+        if (IsPlayerInPit)
+        {
+            IncreaseKillCounter();
+            _enemiesAlive--;
+            Debug.Log($"Enemy died. Enemies alive: {_enemiesAlive}, Kills: {killCounter}");
+        }
+       
+
     }
 
     private void IncreaseKillCounter()
