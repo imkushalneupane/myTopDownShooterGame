@@ -27,8 +27,8 @@ public class EnemySpwannerScript : MonoBehaviour
     [SerializeField] private int maxEnemiesAlive = 5; // Maximum enemies allowed at once
     [SerializeField] private float spawnDelay = 2f; // Delay between spawns
     [SerializeField] private int killsToSpawnGun = 10; // Kills needed to spawn AK-47
-    [SerializeField] private int killsToSpawnKey = 15;
-    [SerializeField] private int killsToStopSpawning = 20; // Kills when enemies stop spawning
+    [SerializeField] private int killsToSpawnKey = 50;
+    [SerializeField] private int killsToStopSpawning = 55; // Kills when enemies stop spawning
     
 
     private int killCounter = 0;

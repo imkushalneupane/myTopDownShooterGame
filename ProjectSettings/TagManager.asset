@@ -19,6 +19,7 @@ TagManager:
   - NitroPack
   - NitroCylinder
   - Portal
+  - Boss
   layers:
   - Default
   - TransparentFX

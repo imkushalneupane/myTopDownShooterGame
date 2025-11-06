@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GuidedRocket
   trailParticles: {fileID: 4668307874759888884}
-  explosionParticles: {fileID: 5646709316936303757}
+  explosionParticles: {fileID: 2194380042810886786}
   explosionSound: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
   explosionRadius: 3
   explosionDamage: 2
@@ -241,11 +241,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1972487910709877232, guid: 1f58a1dea6bbd9347843e4935585e6a2, type: 3}
   m_PrefabInstance: {fileID: 2369991605999358088}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &5646709316936303757 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7980029976762078213, guid: 1f58a1dea6bbd9347843e4935585e6a2, type: 3}
-  m_PrefabInstance: {fileID: 2369991605999358088}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4895343553018971144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,6 +249,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6127152091802001935}
     m_Modifications:
+    - target: {fileID: 3578935019304643391, guid: 366377810aaf4fc4ab2be725a54c5712, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 7212285832888557706, guid: 366377810aaf4fc4ab2be725a54c5712, type: 3}
       propertyPath: m_LocalScale.x
       value: 3
@@ -386,6 +385,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82066d902ed0dd6488ddfd32eb994801, type: 3}
+--- !u!198 &2194380042810886786 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4891440538664600065, guid: 82066d902ed0dd6488ddfd32eb994801, type: 3}
+  m_PrefabInstance: {fileID: 6743544802148583555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7367431337694965415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4299738629470430756, guid: 82066d902ed0dd6488ddfd32eb994801, type: 3}
