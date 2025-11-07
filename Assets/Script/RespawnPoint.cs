@@ -2,14 +2,18 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Android;
 using UnityEngine.Playables;
+using NUnit.Framework;
 public class RespawnPoint : MonoBehaviour
 {
-
+    [SerializeField] KeyHolder _keyHolder;
     [SerializeField] NitroControllerScript _nitro;
     private Vector3 currentCheckpoint;
     private bool nitro = false;
     private int i = 0;
     [SerializeField] private GameObject NitroPack;
+    private bool hasredkey = false;
+    private bool hasbluekey = false;
+    private bool hasgreenkey = false;
     void Start()
     {
 
@@ -22,10 +26,29 @@ public class RespawnPoint : MonoBehaviour
         }
 
         i = getnitroCylinder();
-        for(int j = 0; j < i; j++)
+        for (int j = 0; j < i; j++)
         {
             _nitro.OnCylinderPick();
         }
+        getkey();
+        if (hasredkey == true)
+        {
+            Debug.Log("Player has Red Key");
+            _keyHolder.AddKey(Key.Keytype.Red);
+
+        }
+        if (hasbluekey == true)
+        {
+            Debug.Log("Player has Blue Key");
+            _keyHolder.AddKey(Key.Keytype.Blue);
+
+        }
+        if (hasgreenkey == true)
+        {
+            Debug.Log("Player has Green Key");
+            _keyHolder.AddKey(Key.Keytype.Green);
+        }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,14 +62,44 @@ public class RespawnPoint : MonoBehaviour
             nitro = true;
         }
         setnitropack();
-        
-        if( collision.CompareTag("NitroCylinder"))
+
+        if (collision.CompareTag("NitroCylinder"))
         {
             i++;
         }
         setnitroCylinder();
+        if (collision.CompareTag("RedKey"))
+        {
+            hasredkey = true;
+        }
+        if (collision.CompareTag("BlueKey"))
+        {
+            hasbluekey = true;
+        }
+        if (collision.CompareTag("GreenKey"))
+        {
+            hasgreenkey = true;
+        }
+        setkey();
 
-        
+    }
+    private void setkey()
+    {
+        PlayerPrefs.SetInt("RedKey", hasredkey ? 1 : 0);
+        PlayerPrefs.SetInt("BlueKey", hasbluekey ? 1 : 0);
+        PlayerPrefs.SetInt("GreenKey", hasgreenkey ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+    private void getkey()
+    {
+        int redvalue = PlayerPrefs.GetInt("RedKey", 0);
+        hasredkey = redvalue == 1;
+
+        int bluevalue = PlayerPrefs.GetInt("BlueKey", 0);
+        hasbluekey = bluevalue == 1;
+
+        int greenvalue = PlayerPrefs.GetInt("GreenKey", 0);
+        hasgreenkey = greenvalue == 1;
     }
 
     private void setnitropack()

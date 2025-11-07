@@ -21,6 +21,9 @@ TagManager:
   - Portal
   - Boss
   - CheckPoint
+  - RedKey
+  - GreenKey
+  - BlueKey
   layers:
   - Default
   - TransparentFX

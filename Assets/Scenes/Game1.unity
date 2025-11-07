@@ -13705,6 +13705,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb9428438fbeb64a8b4b949d054e07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
+  _keyHolder: {fileID: 921083504}
+  _nitro: {fileID: 908500348}
+  NitroPack: {fileID: 908500346}
+--- !u!114 &921083504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3555098350648628772, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+  m_PrefabInstance: {fileID: 2369338173782155883}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921083483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a950b5f2331f84347ad247a172ed6ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929420935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19743212530835105, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
@@ -28437,6 +28451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedKey
       objectReference: {fileID: 0}
+    - target: {fileID: 4002042588514777939, guid: 2621e96db17b4bf4abd72ba54d79b196, type: 3}
+      propertyPath: m_TagString
+      value: RedKey
+      objectReference: {fileID: 0}
     - target: {fileID: 7500708414316791420, guid: 2621e96db17b4bf4abd72ba54d79b196, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -33597,11 +33615,11 @@ PrefabInstance:
       objectReference: {fileID: 1954767099}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -71.5
+      value: -71.91
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.1
+      value: -49.54
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.z
