@@ -104,6 +104,16 @@ public abstract class Weapon : MonoBehaviour
         return isReloading;
     }
 
+    private void OnEnable()
+    {
+        // Reset reload state when weapon is enabled
+        if (isReloading)
+        {
+            isReloading = false;
+            Debug.LogWarning("Reload was interrupted, resetting reload state");
+        }
+    }
+
 
 
 }
