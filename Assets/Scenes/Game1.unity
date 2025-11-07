@@ -807,7 +807,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3dee5665d9ba5f245a0d9e1942c383e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1111,7 +1111,7 @@ GameObject:
   - component: {fileID: 80854922}
   m_Layer: 0
   m_Name: cp_1
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1845,7 +1845,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3dee5665d9ba5f245a0d9e1942c383e9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 162954019}
   m_Layer: 0
   m_Name: cp_4
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10235,7 +10235,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ccb5cd910bfa9f54c948ccd11c19ca55, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13693,6 +13693,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HazardCollisionDetection
   _spikeController: {fileID: 1337697337}
   _spikeController2: {fileID: 784120328}
+--- !u!114 &921083499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921083483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb9428438fbeb64a8b4b949d054e07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
 --- !u!1 &929420935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 19743212530835105, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
@@ -16140,7 +16152,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6f6286f00e5ea514faedc2a9a02a0e44, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -17648,7 +17660,7 @@ GameObject:
   - component: {fileID: 1149362650}
   m_Layer: 0
   m_Name: cp_2
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17795,7 +17807,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ccb5cd910bfa9f54c948ccd11c19ca55, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -21455,7 +21467,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ccb5cd910bfa9f54c948ccd11c19ca55, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -27121,7 +27133,7 @@ GameObject:
   - component: {fileID: 1730471576}
   m_Layer: 0
   m_Name: cp_5
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31067,7 +31079,7 @@ GameObject:
   - component: {fileID: 2052565299}
   m_Layer: 0
   m_Name: cp_3
-  m_TagString: Untagged
+  m_TagString: CheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33267,6 +33279,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -69.99231
       objectReference: {fileID: 0}
+    - target: {fileID: 1205858665700668988, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1274087837618131610, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_SizeDelta.x
       value: 136.5734
@@ -33419,6 +33435,14 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 248709105}
+    - target: {fileID: 4926692863280987795, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926692863280987795, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5753053466824519553, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: _health
       value: 
@@ -33682,6 +33706,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1459447554865436358, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       insertIndex: -1
       addedObject: {fileID: 921083496}
+    - targetCorrespondingSourceObject: {fileID: 1459447554865436358, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 921083499}
   m_SourcePrefab: {fileID: 100100000, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
 --- !u!1001 &2715856766353655409
 PrefabInstance:
