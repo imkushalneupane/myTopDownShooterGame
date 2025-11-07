@@ -3,7 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControllerScript : MonoBehaviour
 {
-   
+
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void OnPlayPressed()
     {
         SceneManager.LoadScene("Game1");

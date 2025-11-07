@@ -351,10 +351,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: portion_0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2494181680381998917, guid: 7ee04913d9a8c7d4eb3fe5c11afe92bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5809378231375451935, guid: 7ee04913d9a8c7d4eb3fe5c11afe92bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348011506}
   m_SourcePrefab: {fileID: 100100000, guid: 7ee04913d9a8c7d4eb3fe5c11afe92bd, type: 3}
 --- !u!1 &42426773
 GameObject:
@@ -3624,6 +3628,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &220777547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+  m_PrefabInstance: {fileID: 326511127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &227559712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5096,10 +5105,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SGBullet_0 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2674438811988536354, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196627397}
   m_SourcePrefab: {fileID: 100100000, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
 --- !u!1 &337557409
 GameObject:
@@ -5402,6 +5415,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6207959418596069059, guid: e050d646995200846be1f5ee1e760df9, type: 3}
   m_PrefabInstance: {fileID: 348573071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350472062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+  m_PrefabInstance: {fileID: 999408163}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &354928676
 GameObject:
@@ -6375,6 +6393,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 576485526931880422, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
   m_PrefabInstance: {fileID: 999408163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &404457999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350472062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1001 &410419682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10658,10 +10690,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SGBullet_0 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2674438811988536354, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 880789270}
   m_SourcePrefab: {fileID: 100100000, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
 --- !u!1 &779763418
 GameObject:
@@ -11523,10 +11559,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SGBullet_0 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2674438811988536354, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1639376960}
   m_SourcePrefab: {fileID: 100100000, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
 --- !u!1 &797090185
 GameObject:
@@ -12384,6 +12424,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &822576693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+  m_PrefabInstance: {fileID: 773901807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &833508666
 GameObject:
   m_ObjectHideFlags: 0
@@ -13585,6 +13630,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 576485526931880422, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
   m_PrefabInstance: {fileID: 773901807}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &880789270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822576693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1 &893541018
 GameObject:
   m_ObjectHideFlags: 0
@@ -13737,6 +13796,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyDrop
   keyPrefabs: {fileID: 8664024912410243022, guid: 2965b0fffd5861c46bdfe86ce03dc124, type: 3}
+--- !u!1 &936013262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+  m_PrefabInstance: {fileID: 797063999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &950571302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15176,10 +15240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SGBullet_0 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2674438811988536354, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1332820205533594385, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404457999}
   m_SourcePrefab: {fileID: 100100000, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
 --- !u!1 &1008555807
 GameObject:
@@ -17978,6 +18046,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 576485526931880422, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
   m_PrefabInstance: {fileID: 326511127}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1196627397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220777547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1 &1210532094
 GameObject:
   m_ObjectHideFlags: 0
@@ -18788,6 +18870,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1282292415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7082810446625843553, guid: 0a1b9d3d6a784df40b3b1bf0bcb9af3d, type: 3}
+  m_PrefabInstance: {fileID: 1736878843}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282292419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282292415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1001 &1296677943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20005,6 +20106,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1348011502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5809378231375451935, guid: 7ee04913d9a8c7d4eb3fe5c11afe92bd, type: 3}
+  m_PrefabInstance: {fileID: 40621070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348011506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348011502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1 &1363530981
 GameObject:
   m_ObjectHideFlags: 0
@@ -23779,6 +23899,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 211444422}
+        m_TargetAssemblyTypeName: SpawnDoor, Assembly-CSharp
+        m_MethodName: OnXPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1555122116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25272,6 +25404,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 576485526931880422, guid: fc2d3efa05a9c1842abfd515f38b933f, type: 3}
   m_PrefabInstance: {fileID: 797063999}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639376960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936013262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71822b0748cc5d5469b03e34c2d0b26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoDespwanDropItems
+  floatHeight: 0.2
+  floatSpeed: 2.5
 --- !u!1 &1640266408
 GameObject:
   m_ObjectHideFlags: 0
@@ -27550,10 +27696,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistolbullet_0 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6782911026626915303, guid: 0a1b9d3d6a784df40b3b1bf0bcb9af3d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7082810446625843553, guid: 0a1b9d3d6a784df40b3b1bf0bcb9af3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1282292419}
   m_SourcePrefab: {fileID: 100100000, guid: 0a1b9d3d6a784df40b3b1bf0bcb9af3d, type: 3}
 --- !u!1 &1737296391
 GameObject:
@@ -33287,7 +33437,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 462702410808570078, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 823174624328033790, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_SizeDelta.x

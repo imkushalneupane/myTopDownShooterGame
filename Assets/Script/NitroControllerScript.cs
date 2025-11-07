@@ -110,6 +110,11 @@ public class NitroControllerScript : MonoBehaviour
         }
     }
 
+    public void OnGameReset()
+    {
+        _maxNitroPacks = 1;
+    }
+
     private void OnDestroy()
     {
         if (nitroAction != null)

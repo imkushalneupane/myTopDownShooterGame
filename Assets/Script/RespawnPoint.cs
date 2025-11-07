@@ -1,35 +1,73 @@
-using UnityEngine;
+using NUnit.Framework;
 using System.Collections;
+using System.Globalization;
+using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.Playables;
-using NUnit.Framework;
+using UnityEngine.SceneManagement;
 public class RespawnPoint : MonoBehaviour
 {
     [SerializeField] KeyHolder _keyHolder;
     [SerializeField] NitroControllerScript _nitro;
     private Vector3 currentCheckpoint;
     private bool nitro = false;
-    private int i = 0;
+    private int cylinderCount = 0;
     [SerializeField] private GameObject NitroPack;
     private bool hasredkey = false;
     private bool hasbluekey = false;
     private bool hasgreenkey = false;
+
+
+    public void OnNewGamePressed()
+    {
+        currentCheckpoint = new Vector3 (-71 ,-48, 0); //sets the default spwan point 
+        SetLocation();  //saving
+
+
+
+        
+        cylinderCount = 0;
+        nitro = false;  //no nitro
+        setnitropack();
+        setnitroCylinder();
+
+
+
+        //no keys carrying 
+        hasredkey = false;
+        hasbluekey = false;
+        hasgreenkey = false;
+        setkey();
+
+
+
+
+
+
+
+        //loading the Game1 gamescene with fresh start
+        SceneManager.LoadScene("Game1");
+        Time.timeScale = 1f;
+        Debug.Log("Loading Scene Game1");
+    }
+
     void Start()
     {
 
-        transform.position = GetLocation();
-        nitro = getnitropack();
+        transform.position = GetLocation();  //gets Spawn location from Disk
+        nitro = GetNitroPack();
 
         if (nitro == true)
         {
             NitroPack.gameObject.SetActive(true);
         }
 
-        i = getnitroCylinder();
-        for (int j = 0; j < i; j++)
+        cylinderCount = getnitroCylinder();
+        for (int j = 0; j < cylinderCount; j++)
         {
             _nitro.OnCylinderPick();
         }
+
         getkey();
         if (hasredkey == true)
         {
@@ -48,6 +86,8 @@ public class RespawnPoint : MonoBehaviour
             Debug.Log("Player has Green Key");
             _keyHolder.AddKey(Key.Keytype.Green);
         }
+
+
         
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,7 +105,7 @@ public class RespawnPoint : MonoBehaviour
 
         if (collision.CompareTag("NitroCylinder"))
         {
-            i++;
+            cylinderCount++;
         }
         setnitroCylinder();
         if (collision.CompareTag("RedKey"))
@@ -108,14 +148,14 @@ public class RespawnPoint : MonoBehaviour
         PlayerPrefs.Save();
 
     }
-    private bool getnitropack()
+    private bool GetNitroPack()
     {
         int value = PlayerPrefs.GetInt("NitroPack", 0);
-        return value == 1;
+        return value == 1;   //returns true /false;
     }
     private void setnitroCylinder()
     {
-        PlayerPrefs.SetInt("NitroCylinder", i);
+        PlayerPrefs.SetInt("NitroCylinder", cylinderCount);
         PlayerPrefs.Save();
     }
     private int getnitroCylinder()

@@ -31,8 +31,15 @@ public class SpawnDoor : MonoBehaviour
         killCount.SetActive(true);
         enemySpawner.IsPlayerInPit = true;
         pitfallMessage.SetActive(true);
+        Time.timeScale = 0;
 
 
+       
+    }
+
+    public void OnXPressed()
+    {
+        Time.timeScale = 1;
         Destroy(gameObject);
     }
 }
