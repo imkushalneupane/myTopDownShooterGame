@@ -83,8 +83,8 @@ public class RespawnPoint : MonoBehaviour
         float y = PlayerPrefs.GetFloat("Y", -48);
         float z = PlayerPrefs.GetFloat("Z", 0); 
 
-
-      return new Vector3(x,y,z);
+     return new Vector3(x,y,z);
+      
     }
 
    
