@@ -1,8 +1,13 @@
+using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuControllerScript : MonoBehaviour
 {
+
+    [SerializeField]
+    private Animator _animator;
 
     private void Start()
     {
@@ -13,7 +18,8 @@ public class MainMenuControllerScript : MonoBehaviour
     {
         SceneManager.LoadScene("Game1");
         Time.timeScale = 1f;
-        Debug.Log("Loading Scene Game1");
+
+        // StartCoroutine(OnContinuePressed()); 
     }
     public void OnExitPressed()
     {
@@ -21,4 +27,13 @@ public class MainMenuControllerScript : MonoBehaviour
         Debug.Log("I quit!!");
     }
 
+    /*
+    private IEnumerator OnContinuePressed()
+    {
+        _animator.SetTrigger("SceneTransition");
+        yield return  new WaitForSeconds(.5f);
+        SceneManager.LoadScene("Game1");
+        Time.timeScale = 1f;
+    }
+    */
 }
