@@ -1,13 +1,12 @@
 using System.Collections;
-using UnityEditor.Animations;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuControllerScript : MonoBehaviour
 {
 
-    [SerializeField]
-    private Animator _animator;
+   
 
     private void Start()
     {

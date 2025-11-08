@@ -921,7 +921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720be3e9bce069c4c89673428afc16a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuControllerScript
-  _animator: {fileID: 0}
 --- !u!82 &715605564
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1311,7 +1310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4372527343879299758, guid: d821e9171cb42d743a7fc2e9f4258481, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
