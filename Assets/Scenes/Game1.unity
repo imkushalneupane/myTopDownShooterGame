@@ -6604,6 +6604,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7121,6 +7125,10 @@ PrefabInstance:
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7674,6 +7682,10 @@ PrefabInstance:
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8554,6 +8566,10 @@ PrefabInstance:
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10658,6 +10674,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: 'patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 666069730}
@@ -10665,6 +10685,10 @@ PrefabInstance:
       propertyPath: 'patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 297351617}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17363,6 +17387,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17655,6 +17683,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17725,6 +17757,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7723458308558977882, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
@@ -20859,6 +20895,10 @@ PrefabInstance:
       propertyPath: 'patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 297351617}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21162,6 +21202,10 @@ PrefabInstance:
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -23920,6 +23964,10 @@ PrefabInstance:
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29461,6 +29509,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 248709103}
     - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113767168497180587, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
       propertyPath: 'patrolPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 666069730}
@@ -29468,6 +29520,10 @@ PrefabInstance:
       propertyPath: 'patrolPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 297351617}
+    - target: {fileID: 4336670020104005148, guid: 6dd6fe30f2a56244ba90d920c0a8eb7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
