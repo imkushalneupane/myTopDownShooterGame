@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
+    public GameObject _deadboss;
     public Slider HealthSlider;
 /*    public Slider EaseHealthSlider;
     private float lerpSpeed = 0.05f; */
@@ -75,7 +76,7 @@ public class BossHealth : MonoBehaviour
             Debug.Log("Enemy died and published death event");
             
         }
-
+         GameObject deadboss = Instantiate(_deadboss, transform.position, Quaternion.identity);
         Destroy(gameObject);
         HealthSlider.gameObject.SetActive(false);
     }

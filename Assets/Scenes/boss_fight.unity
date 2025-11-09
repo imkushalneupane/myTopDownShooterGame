@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba1d073080cfe42bad15d4346695b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
+  _deadboss: {fileID: 590583280312299778, guid: 48f774349956b014a9a4621f8bdc2f72, type: 3}
   HealthSlider: {fileID: 1921349369}
   _enemyHealth: 150
   _enemyCurrentHealth: 0
@@ -1982,6 +1983,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 477899206802193177, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.09
+      objectReference: {fileID: 0}
     - target: {fileID: 689648589006918610, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0838
@@ -2049,6 +2054,10 @@ PrefabInstance:
     - target: {fileID: 3524109989760256924, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
       propertyPath: MinDistance
       value: 0.57497656
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080288117938256725, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 4364788235244803653, guid: 747b026e2a3fe5b458ab5011e03e4fb0, type: 3}
       propertyPath: m_Size.x
@@ -4007,9 +4016,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 150
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 150
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
