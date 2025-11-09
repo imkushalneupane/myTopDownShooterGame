@@ -14,6 +14,7 @@ public abstract class Weapon : MonoBehaviour
     public float fireForce = 20f;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public AudioSource reloadAudio;
     
     //Timer to control firing rate
     public float nextFireTime = 0f;
@@ -76,6 +77,7 @@ public abstract class Weapon : MonoBehaviour
     protected virtual IEnumerator ReloadCoroutine()
     {
         isReloading = true;
+        reloadAudio.Play();
 
         yield return new WaitForSeconds(reloadTime); //different for each weapon
 
