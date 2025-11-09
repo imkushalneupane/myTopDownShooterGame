@@ -156,7 +156,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 2194380042810886786}
   explosionSound: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
   explosionRadius: 3
-  explosionDamage: 2
+  explosionDamage: 3
   damageLayer:
     serializedVersion: 2
     m_Bits: 64

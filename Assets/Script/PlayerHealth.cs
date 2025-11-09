@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     public AudioSource bgMusic;
     public AudioSource deathAudio;
     public ParticleSystem healParticle;
+    public float pistoldamage;
+    public float sgdamage;
 
 
     private float invincibleTimer;
@@ -51,13 +53,13 @@ public class PlayerHealth : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy_pistolBullet"))
         {
-            TakeDamage(2f);
+            TakeDamage(pistoldamage);
             Destroy(collision.gameObject);
 
         }
         if (collision.gameObject.CompareTag("Enemy_SGBullet"))
         {
-            TakeDamage(5f);
+            TakeDamage(sgdamage);
             Destroy(collision.gameObject);
             
         }

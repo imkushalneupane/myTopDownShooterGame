@@ -9,7 +9,7 @@ public class GuidedRocket : MonoBehaviour
 
     [Header("Explosion Settings")]
     public float explosionRadius = 3f;
-    public float explosionDamage = 0.5f;
+    public float explosionDamage;
     public LayerMask damageLayer;
 
     [Header("Guidance Settings")]
