@@ -3110,7 +3110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.7402954, y: 7.6447}
+  m_AnchoredPosition: {x: -2.740265, y: 7.6447}
   m_SizeDelta: {x: -23.7505, y: -19.1803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288296988
@@ -3575,6 +3575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 333387564340574852, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 489336206323325086, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: AK47Text
       value: 
@@ -3593,11 +3597,11 @@ PrefabInstance:
       objectReference: {fileID: 1873441930}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.63
+      value: -6.28
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.4
+      value: -14.65
       objectReference: {fileID: 0}
     - target: {fileID: 4105300940097803706, guid: bc33854bee991da4aa2ac2cfce638702, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4621,7 +4625,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 150
   m_WholeNumbers: 0
-  m_Value: 150
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
