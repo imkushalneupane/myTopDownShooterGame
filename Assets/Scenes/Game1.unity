@@ -33242,6 +33242,14 @@ PrefabInstance:
       propertyPath: _touchInput
       value: 
       objectReference: {fileID: 2021927684}
+    - target: {fileID: 1205858665700668988, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593837652129962752, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 317.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2714522796082178409, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -33342,6 +33350,14 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 248709105}
+    - target: {fileID: 4926692863280987795, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926692863280987795, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5753053466824519553, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: _health
       value: 
