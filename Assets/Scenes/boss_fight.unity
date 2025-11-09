@@ -2747,6 +2747,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102063035}
   m_CullTransparentMesh: 1
+--- !u!1 &1105433454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1631255477623391759, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+  m_PrefabInstance: {fileID: 1347223889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112228490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3261,7 +3266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1631255477623391759, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4285,6 +4290,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2121316516228788865, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1105433454}
     - target: {fileID: 2714522796082178409, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_Pivot.x
       value: 0

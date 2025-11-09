@@ -14,6 +14,7 @@ public class DropConsume : MonoBehaviour
 
 
     [SerializeField] AudioSource  pickupAudio;
+    [SerializeField] AudioSource portalAudio;
 
     [SerializeField] private Image AKMessageImage;
     [SerializeField] private Image nitroPackMessageImage;
@@ -81,6 +82,7 @@ public class DropConsume : MonoBehaviour
 
     private IEnumerator TeleportPlayer()
     {
+        portalAudio.Play();
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("boss_fight");
     }
