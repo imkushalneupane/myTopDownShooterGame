@@ -12,7 +12,7 @@ public class BossHealth : MonoBehaviour
 /*    public Slider EaseHealthSlider;
     private float lerpSpeed = 0.05f; */
 
-    public static Action<EnemyHealth> OnEnemyDead; //declaring the event
+    public static Action OnEnemyDead; //declaring the event
 
     
 
@@ -20,6 +20,8 @@ public class BossHealth : MonoBehaviour
     public float _enemyCurrentHealth;
 
     [SerializeField] ParticleSystem _boom;
+
+   
 
 
 
@@ -69,15 +71,15 @@ public class BossHealth : MonoBehaviour
 
     private void EnemyDie()
     {
-
-        if (OnEnemyDead != null)
-        {
-             // Publishing the event for drop
-            Debug.Log("Enemy died and published death event");
-            
-        }
+        OnEnemyDead?.Invoke();
+       
          GameObject deadboss = Instantiate(_deadboss, transform.position, Quaternion.identity);
+
+       
+
         Destroy(gameObject);
         HealthSlider.gameObject.SetActive(false);
+
+
     }
 }

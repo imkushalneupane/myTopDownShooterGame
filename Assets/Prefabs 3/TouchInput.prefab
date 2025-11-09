@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 5246454246579230271}
   - component: {fileID: 5596349565900756313}
   - component: {fileID: 4260800923846987432}
+  - component: {fileID: 8174580836053750610}
   m_Layer: 5
   m_Name: TouchInput
   m_TagString: Untagged
@@ -332,6 +333,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!225 &8174580836053750610
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631255477623391759}
+  m_Enabled: 1
+  m_Alpha: 0.6
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2342563438644896934
 GameObject:
   m_ObjectHideFlags: 0

@@ -4334,6 +4334,7 @@ GameObject:
   - component: {fileID: 4206506242860362290}
   - component: {fileID: 7020464831769026841}
   - component: {fileID: 4864856651359534785}
+  - component: {fileID: 49108244095312964}
   m_Layer: 5
   m_Name: UI
   m_TagString: Enemy
@@ -4626,6 +4627,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &49108244095312964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616038289122588848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae1e65dda7a4164d8d88706ed40941a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _touchInputToggle: {fileID: 2121316516228788865}
+  _touchInput: {fileID: 0}
 --- !u!1 &3632616001047032419
 GameObject:
   m_ObjectHideFlags: 0
@@ -6149,7 +6164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.0012, y: -17.4942}
+  m_AnchoredPosition: {x: 10.0012, y: -5.3}
   m_SizeDelta: {x: 315.7244, y: 86.5916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1658227110753940180
@@ -6182,7 +6197,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You''ve Aquiresd Nitro Pack!!
 
-    Press Space to use it.'
+    Press Dedicated Button to use it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6784,10 +6799,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 0
+      - m_Target: {fileID: 49108244095312964}
+        m_TargetAssemblyTypeName: TouchInputSetActive, Assembly-CSharp
+        m_MethodName: OnTogglePressed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11492,7 +11507,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You''ve Aquired AK47!!
 
-    Press 3 to swtich to it.'
+    Swtich to it to Use it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
