@@ -59,12 +59,14 @@ public class RespawnPoint : MonoBehaviour
 
         if (nitro == true)
         {
+            if(NitroPack != null) 
             NitroPack.gameObject.SetActive(true);
         }
 
         cylinderCount = getnitroCylinder();
         for (int j = 0; j < cylinderCount; j++)
         {
+            if(_nitro != null)
             _nitro.OnCylinderPick();
         }
 
@@ -72,18 +74,21 @@ public class RespawnPoint : MonoBehaviour
         if (hasredkey == true)
         {
             Debug.Log("Player has Red Key");
+            if(_keyHolder != null)
             _keyHolder.AddKey(Key.Keytype.Red);
 
         }
         if (hasbluekey == true)
         {
             Debug.Log("Player has Blue Key");
+            if(_keyHolder != null)
             _keyHolder.AddKey(Key.Keytype.Blue);
 
         }
         if (hasgreenkey == true)
         {
             Debug.Log("Player has Green Key");
+            if(_keyHolder != null)
             _keyHolder.AddKey(Key.Keytype.Green);
         }
 
