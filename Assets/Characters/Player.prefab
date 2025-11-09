@@ -139,6 +139,9 @@ GameObject:
   - component: {fileID: 3555098350648628772}
   - component: {fileID: 4369354831151280426}
   - component: {fileID: 7181561582852983622}
+  - component: {fileID: 7326060948085780791}
+  - component: {fileID: 333387564340574852}
+  - component: {fileID: 1095631130995876973}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -384,7 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: 92ab0276afd5dda4aa6d36696517884b, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -401,6 +404,48 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7326060948085780791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459447554865436358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3717da36ccdc055479e9d82992aa8691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HazardCollisionDetection
+  _spikeController: {fileID: 0}
+  _spikeController2: {fileID: 0}
+--- !u!114 &333387564340574852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459447554865436358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb9428438fbeb64a8b4b949d054e07d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
+  _keyHolder: {fileID: 3555098350648628772}
+  _nitro: {fileID: 0}
+  NitroPack: {fileID: 0}
+--- !u!114 &1095631130995876973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459447554865436358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2b8ce9cc367f145993d86af3525c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDifficultyHandler
+  playerHealth: {fileID: 3900417002309399906}
 --- !u!1 &3568669628466875926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,7 +1761,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 224c66cc121ab2d49b1381f43d096db7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.72
+  m_Volume: 0.36
   m_Pitch: 0.86
   Loop: 0
   Mute: 0

@@ -23,6 +23,9 @@ public class NitroControllerScript : MonoBehaviour
     [SerializeField]private PlayerInput playerInput;
     private InputAction nitroAction;
 
+    [SerializeField]
+    private GameObject NitroButton;
+
     void Start()
     {
         playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<UnityEngine.InputSystem.PlayerInput>();
@@ -36,6 +39,11 @@ public class NitroControllerScript : MonoBehaviour
         nitroAction = playerInput.actions["Nitro"];
 
         nitroAction.performed += OnNitroPerformed;
+
+        if (NitroButton != null)
+        {
+            NitroButton.SetActive(true);  //enabling the Nitro touch controls
+        }
     }
 
     
