@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerDifficultyHandler : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    public DiifficultyPoint respawnPoint;
     
     void Start()
     {
             int diff = DifficultyManager.difficultyLevel;
+        respawnPoint.SetDifficulty();
 
         if (diff == 1)
         {

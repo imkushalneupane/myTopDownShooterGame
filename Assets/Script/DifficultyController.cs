@@ -1,13 +1,21 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DifficultyController : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public Slider difficultySlider;
 
+    public void Start()
+    {
+        difficultySlider.value = DifficultyManager.diffi;
+
+    }
 
     public void OnSliderChanged(float value)
     {
+        
         switch (value)
         {
             case 1:

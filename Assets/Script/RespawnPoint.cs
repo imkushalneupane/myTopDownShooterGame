@@ -10,12 +10,14 @@ public class RespawnPoint : MonoBehaviour
     [SerializeField] KeyHolder _keyHolder;
     [SerializeField] NitroControllerScript _nitro;
     private Vector3 currentCheckpoint;
+   
     private bool nitro = false;
     private int cylinderCount = 0;
     [SerializeField] private GameObject NitroPack;
     private bool hasredkey = false;
     private bool hasbluekey = false;
     private bool hasgreenkey = false;
+    public PlayerHealth playerHealth;
 
 
     public void OnNewGamePressed()
@@ -93,7 +95,9 @@ public class RespawnPoint : MonoBehaviour
         }
 
 
-        
+
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -167,6 +171,8 @@ public class RespawnPoint : MonoBehaviour
     {
         return PlayerPrefs.GetInt("NitroCylinder", 0);
     }
+
+
     private void SetLocation()
     {
         PlayerPrefs.SetFloat("X", currentCheckpoint.x);
