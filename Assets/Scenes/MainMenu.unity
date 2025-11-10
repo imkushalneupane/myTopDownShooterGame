@@ -210,6 +210,7 @@ MonoBehaviour:
   _keyHolder: {fileID: 0}
   _nitro: {fileID: 0}
   NitroPack: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!1 &60201824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DifficultyController
   text: {fileID: 1368424881}
+  difficultySlider: {fileID: 1958389351}
 --- !u!1 &1107625292
 GameObject:
   m_ObjectHideFlags: 0
