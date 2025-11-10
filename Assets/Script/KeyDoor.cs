@@ -6,7 +6,8 @@ public class KeyDoor : MonoBehaviour
     [SerializeField] private Key.Keytype keyType;
     [SerializeField] private AudioSource _doorBreakAudio;
 
-  
+
+
     public Key.Keytype GetKeyType()
     {
         return keyType;
@@ -14,7 +15,14 @@ public class KeyDoor : MonoBehaviour
     public void OpenDoor()
     {
         _doorBreakAudio.Play();
-        Destroy(gameObject);
+        
+        StartCoroutine(OnDoorDestroy());
 
+    }
+
+    IEnumerator OnDoorDestroy()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
     }
 }
