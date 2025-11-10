@@ -2,15 +2,19 @@ using System.Collections;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuControllerScript : MonoBehaviour
 {
-
+    [SerializeField]
+    private Button _continueButton;
    
 
     private void Start()
     {
         Time.timeScale = 1;
+
+        CheckFirstTimeLoading();
     }
 
     public void OnPlayPressed()
@@ -35,4 +39,20 @@ public class MainMenuControllerScript : MonoBehaviour
         Time.timeScale = 1f;
     }
     */
+
+    private void CheckFirstTimeLoading()
+    {
+        int x = PlayerPrefs.GetInt("CheckNewGamePressed",0);
+        if (x == 0)
+        {
+            _continueButton.gameObject.SetActive(false);
+        }
+        
+    }
+
+    public void OnNewGamePressed()
+    {
+        PlayerPrefs.SetInt("CheckNewGamePressed",1);
+        PlayerPrefs.Save();
+    }
 }
