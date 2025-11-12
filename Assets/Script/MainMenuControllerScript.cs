@@ -42,7 +42,7 @@ public class MainMenuControllerScript : MonoBehaviour
 
     private void CheckFirstTimeLoading()
     {
-        int x = PlayerPrefs.GetInt("CheckNewGamePressed",0);
+        int x = PlayerPrefs.GetInt("CheckFirstNewGamePressed",0);
         if (x == 0)
         {
             _continueButton.gameObject.SetActive(false);
@@ -52,7 +52,7 @@ public class MainMenuControllerScript : MonoBehaviour
 
     public void OnNewGamePressed()
     {
-        PlayerPrefs.SetInt("CheckNewGamePressed",1);
+        PlayerPrefs.SetInt("CheckFirstNewGamePressed",1);
         PlayerPrefs.Save();
     }
 }

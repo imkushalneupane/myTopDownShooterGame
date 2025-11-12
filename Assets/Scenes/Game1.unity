@@ -21175,6 +21175,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: TouchInput
       objectReference: {fileID: 0}
+    - target: {fileID: 1673098213895427809, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512399598441291268, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634797652128526064, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74.1532
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634797652128526064, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 79.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634797652128526064, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 537.8929
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634797652128526064, guid: ed0661b2adbda88459120fc574056e1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -319.5816
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34170,7 +34194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4372527343879299758, guid: d821e9171cb42d743a7fc2e9f4258481, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

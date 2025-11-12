@@ -5042,6 +5042,10 @@ PrefabInstance:
       propertyPath: _touchInput
       value: 
       objectReference: {fileID: 1105433454}
+    - target: {fileID: 434093489390396929, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6706267312972493342, guid: c5a788b19094e714a89859a942dbc70b, type: 3}
     - target: {fileID: 1205858665700668988, guid: 9fa7c6e01c496cb41a3bf2a9e3f2a5e5, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5426,7 +5430,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1288296987}
   m_HandleRect: {fileID: 0}
@@ -5434,7 +5438,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 150
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 150
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
